@@ -1,0 +1,39 @@
+{
+  "name": "material-theme-appbar",
+  "version": "1.2.6",
+  "description": "Material Theme Appbar addon for Sublime Text 3",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat-json": "^1.0.0",
+    "gulp-concat-json2js": "^0.1.0",
+    "gulp-duration": "0.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-wrap": "^0.13.0",
+    "path": "^0.12.7",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/equinusocio/material-theme-appbar.git"
+  },
+  "keywords": [
+    "material",
+    "theme",
+    "sublime",
+    "text",
+    "design"
+  ],
+  "author": "Mattia Astorino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/equinusocio/material-theme-appbar/issues"
+  },
+  "homepage": "https://github.com/equinusocio/material-theme-appbar"
+}

@@ -1,0 +1,847 @@
+{
+	"folder_history":
+	[
+		"/home/icedreamfeakr/.config/polybar",
+		"/home/icedreamfeakr/RubymineProjects/sample_app",
+		"/home/icedreamfeakr/RubymineProjects/toy_app",
+		"/home/icedreamfeakr/RubymineProjects/login_app"
+	],
+	"last_version": 3176,
+	"last_window_id": 43,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 0.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 368.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"vmen",
+						"View: Toggle Menu"
+					],
+					[
+						":w",
+						":w - Save"
+					],
+					[
+						"to",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"toggle",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"theme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"pac",
+						"Package Control: Install Package"
+					],
+					[
+						"instal",
+						"Package Control: Install Package"
+					],
+					[
+						":insta",
+						"Package Control: Install Package"
+					],
+					[
+						"boxy",
+						"Boxy Theme: Activation"
+					],
+					[
+						"ayu",
+						"ayu: Activate theme"
+					],
+					[
+						"p",
+						"Package Control: Disable Package"
+					],
+					[
+						"ma",
+						"Material Theme: Activate theme"
+					],
+					[
+						"bo",
+						"Boxy Theme: Activation"
+					],
+					[
+						"syntaxh",
+						"Set Syntax: HTML"
+					],
+					[
+						"syntax",
+						"Set Syntax: Elixir"
+					],
+					[
+						":syntax",
+						"Preferences: Settings – Syntax Specific"
+					],
+					[
+						"",
+						":e - Revert"
+					],
+					[
+						":",
+						"A File Icon: Revert to a Freshly Installed State"
+					],
+					[
+						"syntaxbas",
+						"Set Syntax: Shell Script (Bash)"
+					],
+					[
+						":elix",
+						"Build With: Elixir - elixir $file"
+					],
+					[
+						"eli",
+						"Set Syntax: Elixir"
+					],
+					[
+						"pacin",
+						"Package Control: Install Package"
+					],
+					[
+						"pre:",
+						"Preferences: Settings"
+					],
+					[
+						"view",
+						"View: Toggle Side Bar"
+					],
+					[
+						"vi",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"v",
+						"View: Toggle Status Bar"
+					],
+					[
+						":vmen",
+						"A File Icon: Environment"
+					],
+					[
+						"vo",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"vop",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"pa",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control: ",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control: ins",
+						"Package Control: Install Package"
+					],
+					[
+						"the",
+						"Material Theme: Activate theme"
+					],
+					[
+						"vem",
+						"View: Toggle Menu"
+					],
+					[
+						":op",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"pre",
+						"Preferences: Browse Packages"
+					],
+					[
+						"pain",
+						"Package Control: Install Package"
+					],
+					[
+						"pc",
+						"Package Control: Install Package"
+					],
+					[
+						"ter",
+						"Material Theme: Configuration"
+					],
+					[
+						"vtab",
+						"View: Toggle Tabs"
+					]
+				],
+				"width": 505.0
+			},
+			"console":
+			{
+				"height": 139.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/icedreamfeakr/Downloads/2bwm/config.h",
+				"/home/icedreamfeakr/.config/nvim/init.vim",
+				"/home/icedreamfeakr/bin/2bws.sh",
+				"/home/icedreamfeakr/.config/nvim/nvim",
+				"/home/icedreamfeakr/.config/polybar/2bwm",
+				"/home/icedreamfeakr/.config/sxhkd/sxhkdrc",
+				"/home/icedreamfeakr/.config/polybar/blue-sky",
+				"/home/icedreamfeakr/.config/bspwm/bspwmrc",
+				"/home/icedreamfeakr/tmpfs/config.h",
+				"/home/icedreamfeakr/.config/polybar/config",
+				"/home/icedreamfeakr/.config/rofi/config",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/layouts/application.html.erb",
+				"/home/icedreamfeakr/MMO/MMO list",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/test/controllers/static_pages_controller_test.rb",
+				"/home/icedreamfeakr/tmpfs/text.txt",
+				"/home/icedreamfeakr/.config/neofetch/2.conf",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/helpers/application_helper.rb",
+				"/home/icedreamfeakr/.vimperatorrc",
+				"/home/icedreamfeakr/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/config/routes.rb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/test/test_helper.rb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/Gemfile",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/contact.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/home.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/about.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/help.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/layout_file",
+				"/home/icedreamfeakr/.config/sublime-text-3/Packages/issue_template.md",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/controllers/static_pages_controller.rb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/controllers/application_controller.rb",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/config/routes.rb",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/app/controllers/application_controller.rb",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/Gemfile",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/config/secrets.yml"
+			],
+			"find":
+			{
+				"height": 26.9320843091
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"cpu",
+					"interval",
+					"□",
+					"■",
+					"bspwm",
+					"XK_p",
+					"rofi",
+					"XK_w",
+					"padding"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"-",
+					"×"
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 26.9320843091
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.exec":
+			{
+				"height": 112.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 49.1803278689
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 500.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 380.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": false,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 247.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 0.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/xmiah/.config/nvim/init.vim",
+					"settings":
+					{
+						"buffer_size": 10863,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/xmiah/.config/nvim/vnm",
+					"settings":
+					{
+						"buffer_size": 10863,
+						"encoding": "UTF-8",
+						"line_ending": "Unix",
+						"name": "\" set true colors"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 368.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						":w",
+						":w - Save"
+					],
+					[
+						":clo",
+						"File: Close All"
+					],
+					[
+						"vm",
+						"View: Toggle Menu"
+					],
+					[
+						"vmen",
+						"View: Toggle Menu"
+					],
+					[
+						"to",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"toggle",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"theme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"pac",
+						"Package Control: Install Package"
+					],
+					[
+						"instal",
+						"Package Control: Install Package"
+					],
+					[
+						":insta",
+						"Package Control: Install Package"
+					],
+					[
+						"boxy",
+						"Boxy Theme: Activation"
+					],
+					[
+						"ayu",
+						"ayu: Activate theme"
+					],
+					[
+						"p",
+						"Package Control: Disable Package"
+					],
+					[
+						"ma",
+						"Material Theme: Activate theme"
+					],
+					[
+						"bo",
+						"Boxy Theme: Activation"
+					],
+					[
+						"syntaxh",
+						"Set Syntax: HTML"
+					],
+					[
+						"syntax",
+						"Set Syntax: Elixir"
+					],
+					[
+						":syntax",
+						"Preferences: Settings – Syntax Specific"
+					],
+					[
+						"",
+						":e - Revert"
+					],
+					[
+						":",
+						"A File Icon: Revert to a Freshly Installed State"
+					],
+					[
+						"syntaxbas",
+						"Set Syntax: Shell Script (Bash)"
+					],
+					[
+						":elix",
+						"Build With: Elixir - elixir $file"
+					],
+					[
+						"eli",
+						"Set Syntax: Elixir"
+					],
+					[
+						"pacin",
+						"Package Control: Install Package"
+					],
+					[
+						"pre:",
+						"Preferences: Settings"
+					],
+					[
+						"view",
+						"View: Toggle Side Bar"
+					],
+					[
+						"vi",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"v",
+						"View: Toggle Status Bar"
+					],
+					[
+						":vmen",
+						"A File Icon: Environment"
+					],
+					[
+						"vo",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"vop",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"pa",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control: ",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control: ins",
+						"Package Control: Install Package"
+					],
+					[
+						"the",
+						"Material Theme: Activate theme"
+					],
+					[
+						"vem",
+						"View: Toggle Menu"
+					],
+					[
+						":op",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"pre",
+						"Preferences: Browse Packages"
+					],
+					[
+						"pain",
+						"Package Control: Install Package"
+					],
+					[
+						"pc",
+						"Package Control: Install Package"
+					],
+					[
+						"ter",
+						"Material Theme: Configuration"
+					],
+					[
+						"vtab",
+						"View: Toggle Tabs"
+					]
+				],
+				"width": 505.0
+			},
+			"console":
+			{
+				"height": 139.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/home/icedreamfeakr/RubymineProjects/sample_app"
+			],
+			"file_history":
+			[
+				"/home/xmiah/.config/nvim/init.def3",
+				"/home/xmiah/どうした？/t.py",
+				"/home/icedreamfeakr/Downloads/2bwm/config.h",
+				"/home/icedreamfeakr/.config/nvim/init.vim",
+				"/home/icedreamfeakr/bin/2bws.sh",
+				"/home/icedreamfeakr/.config/nvim/nvim",
+				"/home/icedreamfeakr/.config/polybar/2bwm",
+				"/home/icedreamfeakr/.config/sxhkd/sxhkdrc",
+				"/home/icedreamfeakr/.config/polybar/blue-sky",
+				"/home/icedreamfeakr/.config/bspwm/bspwmrc",
+				"/home/icedreamfeakr/tmpfs/config.h",
+				"/home/icedreamfeakr/.config/polybar/config",
+				"/home/icedreamfeakr/.config/rofi/config",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/layouts/application.html.erb",
+				"/home/icedreamfeakr/MMO/MMO list",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/test/controllers/static_pages_controller_test.rb",
+				"/home/icedreamfeakr/tmpfs/text.txt",
+				"/home/icedreamfeakr/.config/neofetch/2.conf",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/helpers/application_helper.rb",
+				"/home/icedreamfeakr/.vimperatorrc",
+				"/home/icedreamfeakr/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/config/routes.rb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/test/test_helper.rb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/Gemfile",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/contact.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/home.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/about.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/views/static_pages/help.html.erb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/layout_file",
+				"/home/icedreamfeakr/.config/sublime-text-3/Packages/issue_template.md",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/controllers/static_pages_controller.rb",
+				"/home/icedreamfeakr/RubymineProjects/sample_app/app/controllers/application_controller.rb",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/config/routes.rb",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/app/controllers/application_controller.rb",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/Gemfile",
+				"/home/icedreamfeakr/RubymineProjects/toy_app/config/secrets.yml"
+			],
+			"find":
+			{
+				"height": 26.9320843091
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"dra",
+					"auto",
+					"python",
+					"cpu",
+					"interval",
+					"□",
+					"■",
+					"bspwm",
+					"XK_p",
+					"rofi",
+					"XK_w",
+					"padding"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"-",
+					"×"
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"path": "/home/icedreamfeakr/RubymineProjects/sample_app"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 1,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/xmiah/.config/nvim/init.vim",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 10863,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										10863,
+										10863
+									]
+								],
+								"settings":
+								{
+									"line_numbers": true,
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"vintage_lines.line": 0,
+									"vintage_lines.lines": 426,
+									"vintage_lines.mode": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/xmiah/.config/nvim/vnm",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 10863,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										8743,
+										8743
+									]
+								],
+								"settings":
+								{
+									"auto_name": "\" set true colors",
+									"line_numbers": true,
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"vintage_lines.line": 353,
+									"vintage_lines.lines": 426,
+									"vintage_lines.mode": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 6029.27400468,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 26.9320843091
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": false,
+			"output.exec":
+			{
+				"height": 112.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,7,7,1583,878,1600,900",
+			"project": "",
+			"replace":
+			{
+				"height": 49.1803278689
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 500.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 380.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": false,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 247.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 24,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

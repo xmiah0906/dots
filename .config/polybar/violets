@@ -1,0 +1,339 @@
+;==============================================================
+; Polybar configuration
+;==============================================================
+
+; The colors used in this polybar configuration
+[colors]
+
+#black = #182a3a
+black = ${xrdb:color0}
+
+#red = #3c8262
+red = ${xrdb:color1}
+
+#yellow = #8d8e77
+yellow = ${xrdb:color5}
+
+#white = #c2c0c3
+white =  ${xrdb:color7}
+
+magenta = ${xrdb:color4}
+
+
+[dims]
+padding = 2
+
+[bar/top]
+;width = 98.5%
+;width = 73%
+width = 100%
+
+height = 22
+
+;offset-x = 16
+;offset-x = 216
+
+offset-y = 0
+radius = 2
+monitor = LVDS1
+
+font-0 = Lemon:pixelsize=6;1
+font-1 = FontAwesome:pixelsize=8;1
+font-2 = Siji:pixelsize=9;1
+font-3 = unifont:pixelsize=9
+font-4 = Iosevka Medium:size=7;1
+
+background = ${colors.black}
+foreground = ${colors.white}
+
+border-size = 2
+border-color = ${colors.black}
+
+line-size = 2
+
+modules-left = powermenu bspwm allow xwindow
+
+modules-center =  spotify
+
+modules-right =  xkeyboard fan wlan temperature volume cpu battery date
+
+fixed-center = true
+wm-restack = bspwm
+tray-position = right
+
+; bspwm
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Unfocused = Inactive workspace on any monitor
+;label-unfocused = %index%
+;label-unfocused-background = ${colors.black}
+;label-unfocused-foreground = ${colors.white}
+;label-unfocused-padding = ${dims.padding}
+
+label-focused = %name%
+label-focused-background = ${colors.black}
+label-focused-foreground = ${colors.white}
+label-focused-padding = ${dims.padding}
+
+label-urgent = %name%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.black}
+label-urgent-padding = ${dims.padding}
+
+label-empty = %name%
+label-empty-background = ${colors.black}
+label-empty-foreground = ${colors.red}
+label-empty-padding = ${dims.padding}
+
+label-occupied = %name%
+label-occupied-background = ${colors.black}
+label-occupied-foreground = ${colors.white}
+label-occupied-padding = ${dims.padding}
+
+format-padding = 0
+
+;allow
+[module/allow]
+type = custom/text
+content = "  | "
+content-foreground = ${colors.magenta}
+
+;xwindow
+[module/xwindow]
+type = internal/xwindow
+;format-prefix = "  "
+format-prefix = "  "
+
+format-prefix-foreground = ${colors.white}
+format-prefix-background = ${colors.red}
+
+label = "%title:0:35:..% "
+label-font = 5
+label-foreground = ${colors.white}
+label-background = ${colors.red}
+
+labal-maxlen = 25
+format-pading = 2
+
+;xkeyboard
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " Layout: "
+format-prefix-font = 1
+format-prefix-foreground = ${colors.white}
+format-prefix-background = ${colors.red}
+
+label-layout = "%layout%  "
+label-layout-font = 1
+label-layout-foreground = ${colors.white}
+label-layout-background = ${colors.red}
+
+format-padding = 2
+
+; Battery
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ACAD
+full-at = 95
+
+format-charging = <label-charging>
+format-charging-background = ${colors.yellow}
+format-charging-foreground = ${colors.black}
+format-charging-padding = ${dims.padding}
+
+format-discharging = <label-discharging>
+format-discharging-background = ${colors.red}
+format-discharging-foreground = ${colors.white}
+format-discharging-padding = ${dims.padding}
+
+format-full = <label-full>
+format-full-background = ${colors.red}
+format-full-foreground = ${colors.white}
+format-full-padding = ${dims.padding}
+
+label-charging = Charging: %percentage%%
+label-discharging = BAT: %percentage%%
+label-full = Full Capacity
+
+; Date
+[module/date]
+type = internal/date
+interval = 1.0
+
+date = "%Y-%M-%d"
+#time = %H:%M:%S
+time = %I:%M %p
+time-alt = %A, %d-%B-%y
+
+label = %time%
+format =  <label>
+format-foreground = ${colors.white}
+format-background = ${colors.black}
+format-padding = ${dims.padding}
+
+;temperature
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 65
+
+format = <ramp> <label>
+;format-underline = #f50a4d
+format-warn = " <ramp> <label-warn>"
+;format-warn-underline = ${self.format-underline}
+
+label = "%temperature% "
+label-background = ${colors.black}
+label-warn = "%temperature% "
+label-warn-foreground = ${colors.red}
+label-warn-background = ${colors.black}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.red}
+;ramp-background = ${colors.black}
+
+format-padding = 1
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal><label-connected>
+label-connected =  " %downspeed:6%  "
+label-connected-background = ${colors.red}
+label-connected-foreground = ${colors.white}
+
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.black}
+ramp-signal-background = ${colors.red}
+
+;fan
+[module/fan]
+type = custom/script
+format = "<label>  "
+;format-background = ${colors.black}
+format-foreground = ${colors.red}
+exec-if = sensors
+exec = "sensors | grep fan1 | awk '{print $2,$3}'"
+format-prefix = " "
+
+format-prefix-background = ${colors.black}
+format-prefix-foreground = ${colors.red}
+
+format-padding = 0
+
+; Volume
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume>
+label-volume =  %percentage%%
+label-volume-foreground = ${colors.white}
+label-volume-background = ${colors.red}
+label-volume-padding = ${dims.padding}
+
+format-muted = <label-muted>
+label-muted = "Mute"
+label-muted-foreground = ${colors.white}
+label-muted-background = ${colors.red}
+label-muted-padding = ${dims.padding}
+
+; Music module with getmusicstatus
+[module/music]
+type = custom/script
+exec = getmusicstatus
+tail = true
+
+format = <label>
+format-background = ${colors.black}
+format-foreground = ${colors.white}
+format-padding = ${dims.padding}
+label = %output%
+
+;spotify
+[module/spotify]
+
+type = custom/script
+;exec = ~/.config/polybar/spotify.sh %artist% ‣ %title%
+tail = true
+exec = ~/.config/polybar/spotify.sh %artist% ▸ %title%
+
+format-background = ${colors.black}
+;format-foreground = ${colors.red}
+format-foreground = ${colors.white}
+
+;format-prefix = " "
+format-prefix = " "
+format-prefix-background = ${colors.black}
+format-prefix-foreground = ${colors.red}
+internal = 1
+
+format-padding = 1
+
+;cpu
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-padding = ${dims.padding}
+format-foreground = ${colors.red}
+format-background = ${colors.black}
+format-prefix = "CPU: "
+label = %percentage%%
+label-foreground = ${colors.white}
+
+; powermenu
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 2
+
+label-open = "    "
+;label-open = "「⍴ower」"
+
+;label-open-foreground = ${colors.red}
+label-open-background = ${colors.black}
+label-close =  cancel
+label-close-foreground = ${colors.yellow}
+label-separator = |
+label-separator-foreground = ${colors.white}
+
+menu-0-0 = suspend
+menu-0-0-exec = menu-open-1
+menu-0-1 = reboot
+menu-0-1-exec = menu-open-2
+menu-0-2 = power off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = SUPEND?
+menu-1-0-exec = systemctl suspend
+
+menu-3-0 = POWEROFF?
+menu-3-0-exec = systemctl poweroff
+
+menu-2-0 = REBOOT?
+menu-2-0-exec = systemctl reboot
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = -2
+
+; vim:ft=dosini

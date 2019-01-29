@@ -1,0 +1,26 @@
+! -- Title: Enter-The-Void
+! -- Author:
+! -- Created: 2018
+
+#define fg    #262626
+#define bg    #e4e4e4
+#define curs  #111111
+
+#define blk       #e4e4e4
+#define bblk      #868686
+#define red       #48994f
+#define bred      #48994f
+#define grn       #50aa59
+#define bgrn      #50aa59
+#define ylw       #60b468
+#define bylw      #60b468
+#define blu       #71bc78
+#define bblu      #71bc78
+#define mag       #a246d1
+#define bmag      #a246d1
+#define cyn       #bc7190
+#define bcyn      #bc7190
+#define wht       #000000
+#define bwht      #000000
+
+! vim: ft=xdefaults

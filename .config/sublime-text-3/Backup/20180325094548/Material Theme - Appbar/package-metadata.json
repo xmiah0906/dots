@@ -1,0 +1,1 @@
+{"description": "Material Theme addon to enable tinted appbar for your Sublime Text", "version": "1.2.8", "url": "https://packagecontrol.io/packages/Material%20Theme%20-%20Appbar", "dependencies": [], "sublime_text": ">=3103", "platforms": ["*"]}

@@ -1,0 +1,156 @@
+
+                               UW ttyp0:
+          A multiscript monospaced screen font family for X11
+
+                              Uwe Waldmann
+                       <uwe _at_ mpi-inf.mpg.de>
+
+
+Introduction
+
+UW ttyp0 is a family of monospaced bitmap fonts. It covers most of the
+Latin and Cyrillic alphabet, Greek, Armenian, Georgian (only Mkhedruli),
+Hebrew (without cantillation marks), Thai, most of IPA (but no UPA),
+standard punctuation, common symbols, some mathematics, line graphics
+and a few dingbats.
+
+A monospaced bitmap font is obviously a bit of a dinosaur. I started to
+work on the ASCII part of the 8x16 size in 1992 because I was
+dissatisfied with the ugly fonts offered by X Windows; later more sizes,
+styles and characters were added (with very long breaks in between). The
+fonts are primarily intended for those old-fashioned computer users who
+still do most of their work using old-fashioned terminal emulator
+programs (like me): for programmers, system administrators, and Unix
+power users. It's a workhorse - it's supposed to "look perfectly
+normal", or at least, as normal as possible given the constraints of
+multiscript monospaced bitmap fonts. It's not supposed to be fancy, or
+cool, or to attract any attention to itself.
+
+
+Sizes and Styles
+
+UW ttyp0 comes in nine sizes (6x11, 6x12, 7x13, 7x14, 8x15, 8x16, 9x17,
+9x18, 11x22). In all of the sizes there are regular and bold versions;
+for 8x15/16 and 9x17/18, there is also an italic. (Due to the
+relationship between character height, character width, stroke width,
+and inter-character space, italics do not really fit for the other
+sizes.) For Hebrew, italics are replaced by semi-bold.
+
+The regular styles (up to 9x18) are sans-serifs with constant stroke
+width, with the obvious exception of some very narrow letters, such as
+I, J, i, j, where serifs are unavoidable in a monowidth font.
+
+The bold styles and the 11x22 regular have varying stroke width, and
+they are hybrid serifs (there are serifs on the horizontal strokes, but
+usually none on the vertical strokes). This is unorthodox, but a
+consequence of the low resolution bitmap: A constant stroke width of 2px
+would be much too dark for an 8x16 or 9x18 font, so alternating between
+1px strokes and 2px strokes is the only choice. But then the contrast
+between thin and thick strokes is so large that serifs on the thin
+(horizontal) lines become necessary for compensation. On the other hand,
+for most letters, there is not enough horizontal space to put decently
+looking serifs on the verticals. The form of the serifs (slab or wedge)
+is uniform within one size/style, but varies between different font
+sizes in order to create the right text color. For Hebrew, both
+horizontal and vertical lines are boldened - if only the horizontal
+lines were boldened, they would appear too light compared to the other
+scripts.
+
+There are some spots in the bold fonts where I deviated from the
+conventional distribution of thick and thin strokes. Examples include
+the right leg of capital U, where a 1px stroke would have been too thin
+for my taste, and the crossbar of capital Eth, where a 1px stroke would
+not have been sufficiently visible. I've also used thick strokes for the
+extenders of some lowercase Armenian letters, such as Gim, Da and Ra, in
+order to compensate for the fact that there was not enough space to make
+these strokes sufficiently long.
+
+
+Script-specific Issues
+
+UW ttyp0 uses a relatively large x-height. For Latin and Cyrillic, this
+should improve legibility; I hope that it's still acceptable for Greek.
+For Armenian and Georgian, the x-height is reduced a bit; it is still
+larger than it should be in a monoscript font, but in a multiscript
+font, reducing it even more would be problematic.
+
+The odd sizes (6x11, 7x13, 8x15, 9x17) of UW ttyp0 are derived rather
+mechanically from the corresponding even ones (6x12, 7x14, 8x16, 9x18),
+usually by deleting the lowest pixel row. For the Latin, Cyrillic, Greek
+and (unpointed) Hebrew script, this means that the vertical space
+between two lines is reduced by one pixel, so it is rather unproblematic
+(except for languages with a very high frequency of accents). The
+Georgian and Armenian letters in UW ttyp0, however, have longer
+descenders, so in these alphabets there is an actual compression of the
+letter shapes. The results are not optimal. For pointed Hebrew,
+Georgian, Armenian, and of course Thai, I'd strongly recommend the
+even-sized versions.
+
+The Thai font is somewhat experimental - a 6x12 matrix is not really
+sufficient for Thai, and even the 9x18 and 11x22 versions would benefit
+from some additional vertical space. Moreover, UW ttyp0 is a bdf font
+and the bdf format does not provide means for proper positioning of
+floating accents, so Thai vowel signs and tone marks are implemented by
+naive overprinting. The results are obviously not optimal. The latter
+problem also affects the display of Hebrew vowel marks.
+
+
+Dubious Design Decisions
+
+- Poor man's kerning:
+  In some font sizes and styles, letters with high arms and without low
+  arms (e.g., F, Gamma) are moved to the right (compared to, say,
+  capital E). This is intentional.
+
+- Letter shapes:
+  I have generally tried to stick to standard letter shapes as much as
+  possible, but there are some exceptions. For instance, the crossbar of
+  the small letter "f" (that is usually on x-height) is slightly
+  lowered. This makes the glyph appear wider, so that it fits better
+  into a monospaced font. Conversely, some Georgian letters (Don, Las),
+  that would otherwise be extremely wide, have glyphs with a reduced
+  number of bowls. These forms are rarely used in print, but they are
+  common both in handwriting and in typewriter fonts.
+
+- Glyph collisions:
+  There are some cases where a glyph collides with the following one.
+  Most of these cases seem to be harmless, either because only one or
+  two pixels of a glyph touch the neighbouring one ("Th" in 6x12 bold
+  and 8x16 bold), or because the letter combination is rare ("sha sha"
+  in 7x14 regular). There is one exception, namely the sequence "mm" in
+  7x14 regular: the letter combination is frequent in some languages and
+  the glyphs touch each other along the full length of the stem. Still I
+  prefer this to a compressed or asymmetric "m". (Unfortunately, in
+  Armenian, the frequency of wide letters (Ayb, Xeh, Peh, Tiwn, Piwr) is
+  so large that using compressed glyphs is unavoidable.)
+
+- Turned letters:
+  Some of the turned letters, such as turned "a" or "e", differ from the
+  non-turned versions. If the "e" of, say, 8x16 is turned, it would look
+  very similar to an "a" (and vice versa), so some disambiguation is
+  necessary.
+
+- Diacritic marks:
+  In certain font sizes and styles, the bitmap font designer has the
+  choice between making the caron unnaturally small, making the breve
+  unnaturally large, or displaying both in the same way. As there is
+  usually little risk of confusion between the two (orthographies using
+  both over the same letter are virtually non-existent), UW ttyp0 uses
+  sometimes the same glyph for breve and caron. The same applies to
+  cedilla and undercomma.
+
+- Underline:
+  Nowadays the underline character is no longer used for underlining,
+  but for compound identifiers in programming languages and web
+  addresses. For these applications, an underline character on the base
+  line work better than an underline character below the base line.
+
+- ASCII non-alphanumerics:
+  For the non-alphanumeric ASCII characters, UW ttyp0 uses mostly the
+  "traditional Unix glyphs": Tilde is raised, asterisk is centered, less
+  and greater signs have a relatively large angle (which works better
+  when these characters are used as a replacement for angular brackets,
+  such as in HTML), the ASCII apostrophe is asymmetric and the ASCII
+  grave is its mirror image. Alternative glyphs are available as an
+  installation time option.
+

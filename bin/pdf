@@ -1,0 +1,89 @@
+#!/bin/bash
+#
+# MUPDF Automation Script
+# Make MUPDF remember current page when you quit
+#
+# Requires: xdotool, zenity
+#
+# Copyright © 2014, 2015 Mark Karpov
+#
+# MUPDF Automation Script is free software: you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or (at
+# your option) any later version.
+#
+# MUPDF Automation Script is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+# Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program. If not, see <http://www.gnu.org/licenses/>.
+
+### constants
+
+CACHE_DIR="$HOME/.cache/mupdf/"
+DEFAULT_PAGE=1
+PAGE_FILE="$CACHE_DIR/$(basename "$1").page"
+
+### functions
+
+bad_exit() # prints error message and exits the program
+{
+    echo "$(basename $0): ${1:-"Unknown Error"}"  1>&2
+    exit 1
+}
+
+### main
+
+# It's not recommended to use this automation script as root, because it
+# would create files with page indexes in /root directory. That's not what
+# you want. So we check if current user is root.
+
+if test $(id -u) -eq 0
+then
+    bad_exit "Please run this program as ordinary user, not as root."
+fi
+
+# Now we need to create a directory where we will store our page indexes for
+# various PDF files. This command will create such directory only if doesn't
+# exist yet.
+
+mkdir -p "$CACHE_DIR"
+
+# OK, here we check if our script has been invoked with at least one command
+# line argument.
+
+if test $# -gt 0
+then
+    # Now we need to find out actual page number. If corresponding file
+    # exists, we use number from the file. Otherwise we use default value:
+    if test -f "$PAGE_FILE"
+    then page=$(cat "$PAGE_FILE")
+    else page=$DEFAULT_PAGE
+    fi
+    # It's time to launch MUPDF. We supply two arguments: name of file and
+    # page number. We start application in background because we need to do
+    # further manipulations here.
+    mupdf "$1" $page &
+    # We need to wait for the program's windows to appear and focus on it.
+    xdotool search --sync --onlyvisible --class "mupdf"
+    # Now we use xdotool to use fullscreen mode. Comment this line if you
+    # don't want to use fullscreen mode automatically.
+    xdotool key f
+    # This command adjust scale so our document occupies full width.
+    xdotool key W
+    # Now we should wait until user decides to exit the program.
+    wait
+    # OK, this is the part where we ask for user's input with zenity.
+    input=$(zenity --entry --title="page number" --text="page number:")
+    # If user entered something and not canceled our query, we should
+    # replace page number with this number.
+    if test "$input" != ""
+    then page=$input
+    fi
+    # Rewrite page number no matter what:
+    echo $page > "$PAGE_FILE"
+else
+    bad_exit "Please supply filename as first argument."
+fi

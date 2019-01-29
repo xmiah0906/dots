@@ -1,0 +1,49 @@
+#! /bin/sh
+
+sxhkd &
+polybar top --quiet &
+
+#gereral configs
+
+bspc config border_width        3
+bspc config window_gap          5
+
+bspc config top_padding         0
+bspc config bottom_padding      0
+bspc config left_padding 			 -3
+bspc config right_padding 		 -3
+
+bspc config split_ratio           0.5
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+
+bspc config normal_frame_opacity         0.5
+bspc config focused_frame_opacity        0.1
+
+# desktop names
+
+#bspc monitor LVDS1 -n 0 -d       
+bspc monitor LVDS1 -n 0 -d - - - - - - -
+
+
+# rules
+# -a takes class_name:instance_name, use xprop to find out the names (WM_CLASS)
+
+bspc rule -a Google-chrome:* desktop='^2' focus=on state=tiled
+bspc rule -a Zathura:* focus=on state=tiled
+bspc rule -a Thunar:* desktop='^4' focus=on
+bspc rule -a skypeforlinux:* desktop='^5' state=pseudo_tiled
+bspc rule -a mpv:* desktop='^3' state=pseudo_tiled focus=on
+bspc rule -a Vmware:* desktop='^2' focus=on
+bspc rule -a smplayer:* desktop='^3' focus=on state=pseudo_tiled
+bspc rule -a Gimp-2.9:* desktop='^3' focus=on state=pseudo_tiled
+bspc rule -a Nitrogen:* desktop='^4' state=floating center=true
+bspc rule -a jetbrains-rubymine:* state=pseudo_tiled left=true
+bspc rule -a "Spotify":'spotify' desktop='^5' left=true
+bspc rule -a Firefox:* desktop='^1' focus=on state=tiled
+bspc rule -a Waterfox:* desktop='^1' focus=on state=floating
+bspc rule -a Cyberfox:* desktop='^1' focus=on state=floating
+bspc rule -a Sxiv:* focus=on state=floating
+
+

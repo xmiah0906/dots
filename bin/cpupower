@@ -1,0 +1,12 @@
+#!/bin/bash
+id=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+
+if [[ "$id" == "powersave" ]]; then
+	sudo cpupower frequency-set -g performance
+	notify-send -u low "CPU SET PERFORMANCE!"
+else
+	sudo cpupower frequency-set -g powersave
+	notify-send -u low "CPU SET POWERSAVE!"
+fi;
+
+

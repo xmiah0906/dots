@@ -1,0 +1,89 @@
+# config 2bwm hotkeys with sxhkd
+
+super + d
+	rofi -show drun -modi drun -display-run 'Run' -display-drun "2BWM " -hide-scrollbar
+
+super + w
+	firefox
+
+super + s
+	spotify
+
+super + p
+    subl3
+
+super + v
+	pavucontrol
+
+# Brightness
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+XF86MonBrightnessDown
+	xbacklight -dec 5
+
+# Volume & Multimedia Keys
+XF86AudioRaiseVolume
+	~/bin/vol.sh -i 4
+
+XF86AudioLowerVolume
+	~/bin/vol.sh -d 4
+
+XF86AudioMute
+	~/bin/vol.sh -t
+
+XF86AudioMicMute
+	pulseaudio-ctl mute-input
+
+# Toggle Touchpad
+super + F2
+	~/bin/toggle-touchpad.sh
+
+# Screensaves
+super + F3
+	~/bin/caffeine.sh
+
+XF86Launch1
+	xset dpms force off
+
+XF86ScreenSaver
+	~/bin/lock.sh -l dimblur
+
+# Spotify Hotkeys
+
+XF86AudioPlay
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+XF86AudioPrev
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+XF86AudioNext
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+# Mpd Hotkeys
+
+super + shift + {F10,F12}
+	mpc -q {prev,next}
+
+super + shift + F11
+	mpc -q toggle
+
+# Screenshots
+
+super + @Print
+	~/bin/scr
+
+# Random Wallpapers
+# Dark Themes
+super + F1
+	wal -a 96 -i "$HOME/Imagens/Wallpapers" ; ~/.config/2bwm/panel/dark-wal-set
+
+# Light Themes
+super + shift + F1
+	wal -a 96 -i "$HOME/Imagens/Wallpapers" -l ; ~/.config/2bwm/panel/wal-set
+
+# Reload SXHKD config
+super + Escape
+	pkill -USR1 -x sxhkd; \
+	notify-send 'SXHKD RELOADED CONFIGURATION'
+

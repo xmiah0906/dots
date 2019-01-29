@@ -1,0 +1,50 @@
+"" Vimperator colorscheme twily
+""
+"" C:\Users\<user>\vimperator\colors\aero.vimp
+
+highlight! CmdLine color: #EBECEE; background: transparent; 
+highlight! CmdLine>* font-family: "Segoe UI"; font-size: 10pt; height: 24px;
+highlight! Normal color: #EBECEE; background: transparent; font-family: "Segoe UI"; font-size: 10pt;
+highlight! StatusLine color: #EBECEE; background: transparent; font-family: "Segoe UI"; font-size: 10pt;
+
+highlight! Bell border: none; background: #eaeaea;
+highlight! Boolean color: #EBECEE;
+highlight! CompDesc width: auto; color: #EBECEE;
+highlight! CompItem>* height: 2; padding: 0 8px;
+highlight! CompItem background: transparent;
+highlight! CompItem[selected] color: #EBECEE; background: #9b79f7;
+highlight! CompTitle background: transparent; font-family: "Segoe UI"; font-size: 10pt;
+highlight! CompTitle>* color: #EBECEE; padding: 2px 8px; 
+highlight! ContentSeparator display: -moz-box;
+
+highlight! Disabled color: #EBECEE;
+highlight! Enabled color: #EBECEE;
+highlight! ErrorMsg color: #F56C66; font-family: "Segoe UI"; font-size: 10pt;
+highlight! Filter color: #222326; background: #6c4cc0;
+highlight! FrameIndicator background: #EBECEE; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+
+highlight! HelpNote color: #8859B3;
+highlight! HelpWarning color: #B359A4;
+
+highlight! Hint font-family: "Segoe UI"; font-size: 10pt; color: #222326; background: #7955da; padding: 1px;
+highlight! HintActive color: #EBECEE; background: #eaeaea;
+highlight! HintElem background: transparent;
+highlight! HintImage opacity: 0.5;
+
+highlight! InfoMsg color: #EBECEE;
+highlight! Keyword color: #EBECEE;
+highlight! LineNr color: #EBECEE;
+highlight! NonText color: #EBECEE;
+
+highlight! ModeMsg color: #EBECEE; background: transparent; padding: 0 8px; font-family: "Segoe UI"; font-size: 10pt;
+highlight! MoreMsg color: #EBECEE; font-family: "Segoe UI"; font-size: 10pt;
+
+highlight! PromptText color: #EBECEE; padding-top: 4px;
+highlight! Question color: #EBECEE;
+
+highlight! Title color: #222326;
+highlight! WarningMsg color: #EBECEE;
+
+
+
+

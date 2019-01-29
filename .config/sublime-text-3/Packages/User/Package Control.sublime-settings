@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ayu",
+		"Boxy Theme",
+		"Elixir",
+		"Material Theme - Appbar",
+		"Package Control",
+		"Predawn",
+		"Predawn Monokai",
+		"Sass",
+		"SyntaxHighlighter Reloaded Color Scheme",
+		"VintageLines"
+	]
+}

@@ -1,0 +1,9 @@
+
+Material Theme - Appbar Addon
+https://github.com/equinusocio/material-theme-appbar
+
+
+👉 Version 1.2.3 👈
+⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞
+
+  ➼ New charcoal accent color

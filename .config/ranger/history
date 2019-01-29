@@ -1,0 +1,50 @@
+search 
+cd Documents/Gits-Complete/
+shell vim cherryblossom.vim
+shell wal -r
+cd .config/
+delete 
+open_with unzip 
+rename 1500442938309.jpg
+rename ac54Ke4.jpg
+open_with unrar e
+cd /home/icedreamfeakr/Imagens/Pictures/
+rename request-response-cycle-dynamic.png
+search pul
+search f
+search fi
+rename Programming Ruby 1.9 - 2.0, 4th edition.pdf
+rename Beige - Snowflake.mp3
+rename Birdy - Let It All Go ft. Rhodes.mp3
+rename G-Eazy - Me Myself & I ft. Bebe Rexha.mp3
+rename Gnash - I Hate U, I Love U ft. Olivia.mp3
+rename Jay Chou  - å¨æ°å«ãHair Like Snow.mp3
+rename Kygo - First Time ft. Ellie Goulding.mp3
+rename Kygo - Stay ft. Maty Noyes.mp3
+rename Lilly Wood - Prayer In C ft. The Prick & Robin Schulz.mp3
+rename Louis Tomlinson - Back to You ft. Bebe Rexha & Digital Farm Animals.mp3
+rename Melvv - Not Me ft. Two Feet.mp3
+rename The Chainsmokers - Closer ft. Halsey.mp3
+rename Zedd - Clarity ft. Foxes.mp3
+rename Nishino Kana - Missing You.mp3
+rename Cam - Chờ Ai ft. QQQ .mp3
+rename Cá Hồi Hoang - Nếu.mp3
+rename Onionn Nếu ft. Marzuz.mp3
+search s
+cd Documents/Gits-Complete/Git/startpage
+cd project/HTML/
+open_with vim
+rename Shameless.S08E02.Wheres.My.Meth.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt
+open_with mpv
+rename moby_dick.png
+cd 
+
+rename r7xmqeqz.default/
+rename r7xmqeqz.default
+open_with atom
+rename Shameless US - S05E01.720p.HDTV.x264-KILLERS.mkv
+rename Shameless.US.S05E01.720p.HDTV.x264-KILLERS.mkv
+find 
+search snwy
+delete
+open_with 

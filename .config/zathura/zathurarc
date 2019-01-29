@@ -1,0 +1,15 @@
+set adjust-open                 "width"
+set selection-clipboard         "clipboard"
+set font                        "Iosevka 7"
+
+#set default-bg "#0a0317"
+#set default-fg "#bacaf8"
+#set statusbar-bg "#050310"
+#set statusbar-fg "#e1f0e4"
+#set recolor-keephue "false"
+#set recolor-lightcolor "#0a0317"
+#set recolor-darkcolor "#bacaf8"
+#set recolor "true"
+
+map [ scroll full-down
+map ] scroll full-up

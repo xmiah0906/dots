@@ -1,0 +1,15 @@
+! ╻ ╻┏━┓┏━╸┏━┓┏━┓╻ ╻┏━┓┏━╸┏━╸┏━┓
+! ┏╋┛┣┳┛┣╸ ┗━┓┃ ┃┃ ┃┣┳┛┃  ┣╸ ┗━┓
+! ╹ ╹╹┗╸┗━╸┗━┛┗━┛┗━┛╹┗╸┗━╸┗━╸┗━┛
+! by mhess
+! managed like they are supposed to be
+
+#include ".xrdb/colors/palenight"
+#include ".xrdb/xresources"
+#include ".xrdb/sxiv"
+#include ".xrdb/xft"
+#include ".xrdb/twobwm"
+#include ".xrdb/rofi"
+#include ".xrdb/st"
+#include ".xrdb/rxvt"
+

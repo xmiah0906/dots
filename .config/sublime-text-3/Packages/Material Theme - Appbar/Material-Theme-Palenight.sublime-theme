@@ -1,0 +1,804 @@
+[
+ 
+/* @TABS
+ * Tabs settings and behavioring
+========================================================================= */
+
+  {
+    "class": "tabset_control",
+    "layer0.tint": [0, 150, 136],
+    "layer0.inner_margin": [2, 6],
+    "tint_index": 1
+  },
+
+  {
+    "class": "tabset_control",
+    "settings": ["!enable_tab_scrolling"],
+    "content_margin": [0, 0, 8, 0]
+  },
+
+  {
+    "class": "tab_control",
+    "layer0.tint": [0, 150, 136],
+    "layer0.opacity": 1.0,
+
+    "layer1.texture": "Material Theme - Appbar/assets/teal/tab_current.png",
+    "layer1.inner_margin": [0, 0],
+    "layer1.opacity": 0.0,
+
+    "layer2.tint": [255, 255, 255, 0],
+    "layer2.opacity": { "target": 0.0, "speed": 3.0, "interpolation": "smoothstep" },
+
+    "layer3.opacity": { "target": 1.0, "speed": 2.0, "interpolation": "smoothstep" },
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/teal/tab_animation1.png",
+              "Material Theme - Appbar/assets/teal/tab_animation2.png",
+              "Material Theme - Appbar/assets/teal/tab_animation3.png",
+              "Material Theme - Appbar/assets/teal/tab_animation4.png",
+              "Material Theme - Appbar/assets/teal/tab_animation5.png",
+              "Material Theme - Appbar/assets/teal/tab_animation6.png",
+              "Material Theme - Appbar/assets/teal/tab_animation7.png",
+              "Material Theme - Appbar/assets/teal/tab_animation8.png",
+              "Material Theme - Appbar/assets/teal/tab_animation9.png",
+              "Material Theme - Appbar/assets/teal/tab_animation10.png",
+              "Material Theme - Appbar/assets/teal/tab_animation11.png",
+              "Material Theme - Appbar/assets/teal/tab_animation12.png",
+              "Material Theme - Appbar/assets/teal/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    },
+
+    "content_margin": [16, 0, 8, 0],
+    "max_margin_trim": 0,
+    "hit_test_level": 0.4
+  },
+
+    // Selected current tab
+
+   {
+    "class": "tab_control", "attributes": ["selected"],
+    "layer1.opacity": 1.0,
+    "layer2.opacity": 0.0,
+    "layer3.opacity": 0.0
+  },
+
+    // Hovered current tab
+
+  {
+    "class": "tab_control", "attributes": ["hover"],
+    "layer1.opacity": 1.0,
+    "layer2.opacity": { "target": 0.6, "speed": 5.0, "interpolation": "smoothstep" },
+    "layer3.opacity": { "target": 0.0, "speed": 2.0, "interpolation": "smoothstep" }
+  },
+
+    // Selected current tab
+
+  {
+    "class": "tab_control", "attributes": ["selected","hover"],
+    "layer1.opacity": 1.0,
+    "layer2.opacity": { "target": 0.6, "speed": 5.0, "interpolation": "smoothstep" },
+    "layer3.opacity": 0.0
+  },
+
+    // Tab Labels
+
+  {
+    "class": "tab_label",
+    "fg": [255, 255, 255]
+  },
+
+    // Tab selected label color
+
+  {
+    "class": "tab_label",
+    "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+    "fg": [255, 255, 255, 255],
+    "shadow_color": [255, 255, 255, 0],
+    "shadow_offset": [0, 0]
+  },
+
+  {
+    "class": "tab_label",
+    "attributes": ["transient"],
+    "font.italic": true
+  },
+
+  // Tab Close Buttons
+  {
+    "class": "tab_close_button",
+    "settings": ["show_tab_close_buttons"],
+    "content_margin": [8,8],
+
+     // Close Icon
+    "layer0.texture": "Material Theme - Appbar/assets/commons/close_icon--hover.png",
+    "layer0.opacity": 0.6,
+    "layer0.inner_margin": 0,
+
+    // Close Icon Hover
+    "layer1.texture": "Material Theme - Appbar/assets/commons/close_icon--hover.png",
+    "layer1.opacity": { "target": 0.0, "speed": 5.0, "interpolation": "smoothstep" },
+
+     // Dirty Icon
+    "layer2.texture": "Material Theme - Appbar/assets/commons/dirty_icon--hover.png",
+    "layer2.inner_margin": 0,
+
+    // Dirty Icon Hover
+    "layer3.texture": "Material Theme - Appbar/assets/commons/dirty_icon--hover.png",
+    "layer3.opacity": { "target": 0.0, "speed": 5.0, "interpolation": "smoothstep" }
+  },
+
+    // Selected Tab
+  {
+    "class": "tab_close_button",
+    "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+    "layer0.opacity": 0, // Close Icon
+    "layer1.opacity": 1, // Close Icon Hover
+  },
+    // Default hover
+  {
+    "class": "tab_close_button",
+    "settings": ["show_tab_close_buttons"],
+    "attributes": ["hover"],
+    "layer0.opacity": 0, // Close Icon
+    "layer1.opacity": 1, // Close Icon Hover
+  },
+    // Dirty tab
+  {
+    "class": "tab_close_button",
+    "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+    "layer0.opacity": 0, // Close Icon
+    "layer1.opacity": 0, // Close Icon Hover
+    "layer2.opacity": 0, // Dirty Icon
+    "layer3.opacity": 1, // Dirty Icon Hover
+    "content_margin": [8,8],
+  },
+    // Dirty tab on hover
+  {
+    "class": "tab_close_button",
+    "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+    "attributes": ["hover"],
+    "layer0.opacity": 0, // Close Icon
+    "layer1.opacity": 1, // Close Icon Hover
+    "layer2.opacity": 0, // Dirty Icon
+    "layer3.opacity": 0  // Dirty Icon Hover
+  },
+    // Selected dirty tab
+  {
+    "class": "tab_close_button",
+    "parents": [{"class": "tab_control", "attributes": ["selected", "dirty"]}],
+    "layer0.opacity": 0, // Close Icon
+    "layer1.opacity": 0, // Close Icon Hover
+    "layer2.opacity": 0, // Dirty Icon
+    "layer3.opacity": 1  // Dirty Icon Hover
+  },
+
+  // Selected dirty tab on hover
+
+  {
+    "class": "tab_close_button",
+    "parents": [{"class": "tab_control", "attributes": ["selected", "dirty"]}],
+    "attributes": ["hover"],
+    "layer0.opacity": 0, // Close Icon
+    "layer1.opacity": 1, // Close Icon Hover
+    "layer2.opacity": 0, // Dirty Icon
+    "layer3.opacity": 0  // Dirty Icon Hover
+  },
+
+  // Overflow dropdown menu
+
+  {
+    "class": "show_tabs_dropdown_button",
+    "layer0.texture": "Material Theme - Appbar/assets/commons/overflow_menu--hover.png",
+    "layer0.opacity": 0.8,
+    "layer1.texture": "Material Theme - Appbar/assets/commons/overflow_menu--hover.png",
+    "layer1.opacity": { "target": 0.0, "speed": 8.0, "interpolation": "smoothstep" },
+  },
+
+  {
+    "class": "show_tabs_dropdown_button",
+    "attributes": ["hover"],
+    "layer1.opacity": { "target": 1.0, "speed": 8.0, "interpolation": "smoothstep" }
+  },
+
+  // tab set scroll left | scroll right
+
+  {
+    "class": "scroll_tabs_left_button",
+    "layer0.texture": "Material Theme - Appbar/assets/commons/arrow_left--hover.png",
+    "layer0.opacity": 0.6,
+    "layer1.texture": "Material Theme - Appbar/assets/commons/arrow_left--hover.png",
+    "layer1.opacity": { "target": 0.0, "speed": 8.0, "interpolation": "smoothstep" },
+  },
+
+  {
+    "class": "scroll_tabs_left_button",
+    "attributes": ["hover"],
+    "layer1.opacity": { "target": 1.0, "speed": 8.0, "interpolation": "smoothstep" }
+  },
+
+  {
+    "class": "scroll_tabs_right_button",
+    "layer0.texture": "Material Theme - Appbar/assets/commons/arrow_right--hover.png",
+    "layer0.opacity": 0.6,
+    "layer1.texture": "Material Theme - Appbar/assets/commons/arrow_right--hover.png",
+    "layer1.opacity": { "target": 0.0, "speed": 8.0, "interpolation": "smoothstep" },
+  },
+
+  {
+    "class": "scroll_tabs_right_button",
+    "attributes": ["hover"],
+    "layer1.opacity": { "target": 1.0, "speed": 8.0, "interpolation": "smoothstep" }
+  },
+
+
+/* @SIDEBAR
+ * Sidebar panel settings and behavioring
+========================================================================= */
+
+  {
+    "class": "sidebar_container",
+    "content_margin": [0, 54, 0, 0],
+    "layer0.tint": [0, 150, 136],
+    "layer0.inner_margin": [0, 54, 0, 0],
+    "layer1.inner_margin": [140, 54, 14, 0],
+    "layer1.tint": [0,0,0],
+    "layer1.opacity": 0.0,
+    "layer2.inner_margin": [140, 54, 14, 0],
+    "layer2.texture": "Material Theme - Appbar/assets/teal/sidebar_heading.png",
+    "layer2.opacity": 1.0,
+  },
+
+  {
+    "class": "sidebar_heading",
+    "color": [207, 216, 220, 0],
+    "font.bold": false,
+    "font.size": 12,
+  },
+
+
+/* @TOOLTIP
+ * Tooltip setting and behavioring
+========================================================================= */
+
+  {
+    "class": "tool_tip_control",
+    "layer0.tint": [0, 0, 0]
+  },
+
+  {
+    "class": "tool_tip_label_control",
+    "color": [255, 255, 255, 150]
+  },
+/* @ ADDON OPTIONS
+ * Options override
+========================================================================= */
+
+  // Default appaerance
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "enable_tab_scrolling"],
+    "layer0.tint": [0, 150, 136],
+    "layer0.inner_margin": [0, 32, 0, 0],
+    "layer2.texture": "Material Theme - Appbar/assets/teal/sidebar_heading--small.png",
+    "layer2.opacity": 1.0,
+    "layer2.inner_margin": [130, 36, 14, 0],
+    "content_margin": [0, 36, 0, 0]
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "!enable_tab_scrolling"],
+    "layer2.texture": "Material Theme - Appbar/assets/teal/sidebar_heading--small.png",
+    "layer2.inner_margin": [130, 36, 14, 0],
+    "content_margin": [0, 36, 0, 0]
+  },
+
+
+  {
+    "class": "sidebar_heading",
+    "settings": ["material_theme_tree_headings"],
+    "color": [207, 216, 220, 255],
+  },
+
+
+  // LIME ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_lime"],
+    "layer0.tint": [124, 179, 76],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_lime"],
+    "layer0.tint": [124, 179, 76],
+    "layer1.texture": "Material Theme - Appbar/assets/lime/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/lime/tab_animation1.png",
+              "Material Theme - Appbar/assets/lime/tab_animation2.png",
+              "Material Theme - Appbar/assets/lime/tab_animation3.png",
+              "Material Theme - Appbar/assets/lime/tab_animation4.png",
+              "Material Theme - Appbar/assets/lime/tab_animation5.png",
+              "Material Theme - Appbar/assets/lime/tab_animation6.png",
+              "Material Theme - Appbar/assets/lime/tab_animation7.png",
+              "Material Theme - Appbar/assets/lime/tab_animation8.png",
+              "Material Theme - Appbar/assets/lime/tab_animation9.png",
+              "Material Theme - Appbar/assets/lime/tab_animation10.png",
+              "Material Theme - Appbar/assets/lime/tab_animation11.png",
+              "Material Theme - Appbar/assets/lime/tab_animation12.png",
+              "Material Theme - Appbar/assets/lime/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_lime"],
+    "layer0.tint": [104, 159, 56],
+    "layer2.texture": "Material Theme - Appbar/assets/lime/sidebar_heading.png",
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_lime"],
+    "layer2.texture": "Material Theme - Appbar/assets/lime/sidebar_heading--small.png",
+  },
+
+
+  // ORANGE ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_orange"],
+    "layer0.tint": [255, 87, 34],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_orange"],
+    "layer0.tint": [255, 87, 34],
+    "layer1.texture": "Material Theme - Appbar/assets/orange/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/orange/tab_animation1.png",
+              "Material Theme - Appbar/assets/orange/tab_animation2.png",
+              "Material Theme - Appbar/assets/orange/tab_animation3.png",
+              "Material Theme - Appbar/assets/orange/tab_animation4.png",
+              "Material Theme - Appbar/assets/orange/tab_animation5.png",
+              "Material Theme - Appbar/assets/orange/tab_animation6.png",
+              "Material Theme - Appbar/assets/orange/tab_animation7.png",
+              "Material Theme - Appbar/assets/orange/tab_animation8.png",
+              "Material Theme - Appbar/assets/orange/tab_animation9.png",
+              "Material Theme - Appbar/assets/orange/tab_animation10.png",
+              "Material Theme - Appbar/assets/orange/tab_animation11.png",
+              "Material Theme - Appbar/assets/orange/tab_animation12.png",
+              "Material Theme - Appbar/assets/orange/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_orange"],
+    "layer0.tint": [255, 87, 34],
+    "layer2.texture": "Material Theme - Appbar/assets/orange/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_orange"],
+    "layer2.texture": "Material Theme - Appbar/assets/orange/sidebar_heading--small.png",
+  },
+
+  // PURPLE ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_purple"],
+    "layer0.tint": [171, 71, 188],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_purple"],
+    "layer0.tint": [171, 71, 188],
+    "layer1.texture": "Material Theme - Appbar/assets/purple/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/purple/tab_animation1.png",
+              "Material Theme - Appbar/assets/purple/tab_animation2.png",
+              "Material Theme - Appbar/assets/purple/tab_animation3.png",
+              "Material Theme - Appbar/assets/purple/tab_animation4.png",
+              "Material Theme - Appbar/assets/purple/tab_animation5.png",
+              "Material Theme - Appbar/assets/purple/tab_animation6.png",
+              "Material Theme - Appbar/assets/purple/tab_animation7.png",
+              "Material Theme - Appbar/assets/purple/tab_animation8.png",
+              "Material Theme - Appbar/assets/purple/tab_animation9.png",
+              "Material Theme - Appbar/assets/purple/tab_animation10.png",
+              "Material Theme - Appbar/assets/purple/tab_animation11.png",
+              "Material Theme - Appbar/assets/purple/tab_animation12.png",
+              "Material Theme - Appbar/assets/purple/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_purple"],
+    "layer0.tint": [171, 71, 188],
+    "layer2.texture": "Material Theme - Appbar/assets/purple/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_purple"],
+    "layer2.texture": "Material Theme - Appbar/assets/purple/sidebar_heading--small.png",
+  },
+
+  // RED ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_red"],
+    "layer0.tint": [244, 67, 54],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_red"],
+    "layer0.tint": [244, 67, 54],
+    "layer1.texture": "Material Theme - Appbar/assets/red/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/red/tab_animation1.png",
+              "Material Theme - Appbar/assets/red/tab_animation2.png",
+              "Material Theme - Appbar/assets/red/tab_animation3.png",
+              "Material Theme - Appbar/assets/red/tab_animation4.png",
+              "Material Theme - Appbar/assets/red/tab_animation5.png",
+              "Material Theme - Appbar/assets/red/tab_animation6.png",
+              "Material Theme - Appbar/assets/red/tab_animation7.png",
+              "Material Theme - Appbar/assets/red/tab_animation8.png",
+              "Material Theme - Appbar/assets/red/tab_animation9.png",
+              "Material Theme - Appbar/assets/red/tab_animation10.png",
+              "Material Theme - Appbar/assets/red/tab_animation11.png",
+              "Material Theme - Appbar/assets/red/tab_animation12.png",
+              "Material Theme - Appbar/assets/red/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_red"],
+    "layer0.tint": [229, 57, 53],
+    "layer2.texture": "Material Theme - Appbar/assets/red/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_red"],
+    "layer2.texture": "Material Theme - Appbar/assets/red/sidebar_heading--small.png",
+  },
+
+  // YELLOW ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_yellow"],
+    "layer0.tint": [255, 160, 0],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_yellow"],
+    "layer0.tint": [255, 160, 0],
+    "layer1.texture": "Material Theme - Appbar/assets/yellow/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/yellow/tab_animation1.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation2.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation3.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation4.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation5.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation6.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation7.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation8.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation9.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation10.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation11.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation12.png",
+              "Material Theme - Appbar/assets/yellow/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_yellow"],
+    "layer0.tint": [255, 145, 24],
+    "layer2.texture": "Material Theme - Appbar/assets/yellow/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_yellow"],
+    "layer2.texture": "Material Theme - Appbar/assets/yellow/sidebar_heading--small.png",
+  },
+
+  // INDIGO ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_indigo"],
+    "layer0.tint": [63, 81, 181],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_indigo"],
+    "layer0.tint": [63, 81, 181],
+    "layer1.texture": "Material Theme - Appbar/assets/indigo/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/indigo/tab_animation1.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation2.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation3.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation4.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation5.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation6.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation7.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation8.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation9.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation10.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation11.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation12.png",
+              "Material Theme - Appbar/assets/indigo/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_indigo"],
+    "layer0.tint": [57, 73, 171],
+    "layer2.texture": "Material Theme - Appbar/assets/indigo/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_indigo"],
+    "layer2.texture": "Material Theme - Appbar/assets/indigo/sidebar_heading--small.png",
+  },
+
+
+  // PINK ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_pink"],
+    "layer0.tint": [245, 0, 87],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_pink"],
+    "layer0.tint": [245, 0, 87],
+    "layer1.texture": "Material Theme - Appbar/assets/pink/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/pink/tab_animation1.png",
+              "Material Theme - Appbar/assets/pink/tab_animation2.png",
+              "Material Theme - Appbar/assets/pink/tab_animation3.png",
+              "Material Theme - Appbar/assets/pink/tab_animation4.png",
+              "Material Theme - Appbar/assets/pink/tab_animation5.png",
+              "Material Theme - Appbar/assets/pink/tab_animation6.png",
+              "Material Theme - Appbar/assets/pink/tab_animation7.png",
+              "Material Theme - Appbar/assets/pink/tab_animation8.png",
+              "Material Theme - Appbar/assets/pink/tab_animation9.png",
+              "Material Theme - Appbar/assets/pink/tab_animation10.png",
+              "Material Theme - Appbar/assets/pink/tab_animation11.png",
+              "Material Theme - Appbar/assets/pink/tab_animation12.png",
+              "Material Theme - Appbar/assets/pink/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_pink"],
+    "layer0.tint": [226, 16, 90],
+    "layer2.texture": "Material Theme - Appbar/assets/pink/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_pink"],
+    "layer2.texture": "Material Theme - Appbar/assets/pink/sidebar_heading--small.png",
+  },
+
+
+  // BLUE ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_blue"],
+    "layer0.tint": [41, 121, 255],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_blue"],
+    "layer0.tint": [41, 121, 255],
+    "layer1.texture": "Material Theme - Appbar/assets/blue/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/blue/tab_animation1.png",
+              "Material Theme - Appbar/assets/blue/tab_animation2.png",
+              "Material Theme - Appbar/assets/blue/tab_animation3.png",
+              "Material Theme - Appbar/assets/blue/tab_animation4.png",
+              "Material Theme - Appbar/assets/blue/tab_animation5.png",
+              "Material Theme - Appbar/assets/blue/tab_animation6.png",
+              "Material Theme - Appbar/assets/blue/tab_animation7.png",
+              "Material Theme - Appbar/assets/blue/tab_animation8.png",
+              "Material Theme - Appbar/assets/blue/tab_animation9.png",
+              "Material Theme - Appbar/assets/blue/tab_animation10.png",
+              "Material Theme - Appbar/assets/blue/tab_animation11.png",
+              "Material Theme - Appbar/assets/blue/tab_animation12.png",
+              "Material Theme - Appbar/assets/blue/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_blue"],
+    "layer0.tint": [43, 114, 233],
+    "layer2.texture": "Material Theme - Appbar/assets/blue/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_blue"],
+    "layer2.texture": "Material Theme - Appbar/assets/blue/sidebar_heading--small.png",
+  },
+
+
+  // CYAN ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_cyan"],
+    "layer0.tint": [0, 188, 212],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_cyan"],
+    "layer0.tint": [0, 188, 212],
+    "layer1.texture": "Material Theme - Appbar/assets/cyan/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/cyan/tab_animation1.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation2.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation3.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation4.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation5.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation6.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation7.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation8.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation9.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation10.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation11.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation12.png",
+              "Material Theme - Appbar/assets/cyan/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_cyan"],
+    "layer0.tint": [18, 175, 196],
+    "layer2.texture": "Material Theme - Appbar/assets/cyan/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_cyan"],
+    "layer2.texture": "Material Theme - Appbar/assets/cyan/sidebar_heading--small.png",
+  },
+
+  // CHARCOAL ACCENT
+  // ##################################################################
+
+  {
+    "class": "tabset_control",
+    "settings": ["material_theme_appbar_charcoal"],
+    "layer0.tint": [66, 66, 66],
+  },
+
+  {
+    "class": "tab_control",
+    "settings": ["material_theme_appbar_charcoal"],
+    "layer0.tint": [66, 66, 66],
+    "layer1.texture": "Material Theme - Appbar/assets/charcoal/tab_current.png",
+    "layer3.texture": {
+            "keyframes":
+            [
+              "Material Theme - Appbar/assets/charcoal/tab_animation1.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation2.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation3.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation4.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation5.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation6.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation7.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation8.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation9.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation10.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation11.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation12.png",
+              "Material Theme - Appbar/assets/charcoal/tab_animation13.png"
+            ],
+            "loop": false,
+            "frame_time": 0.015,
+    }
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_appbar_charcoal"],
+    "layer0.tint": [56, 56, 56],
+    "layer2.texture": "Material Theme - Appbar/assets/charcoal/sidebar_heading.png"
+  },
+
+  {
+    "class": "sidebar_container",
+    "settings": ["material_theme_small_tab", "material_theme_appbar_charcoal"],
+    "layer2.texture": "Material Theme - Appbar/assets/charcoal/sidebar_heading--small.png",
+  },
+
+
+ 
+]

@@ -1,0 +1,24 @@
+! --------------------------------------------------------------------------
+! ROFI Color theme
+! --------------------------------------------------------------------------
+
+rofi.color-enabled:    true
+rofi.width:            25
+rofi.font:             Roboto 8
+rofi.hight:            14
+rofi.separator-style:  true
+rofi.sidebare-mode:    false
+rofi.lines:            7
+rofi.bw:               0
+rofi.fixed-num-lines:  true
+rofi.hide-scrollbar:   true
+rofi.terminal:         urxvtc
+rofi.location:         0
+rofi.xoffset:          12
+rofi.yoffset:          -120
+rofi.padding:          40
+rofi.show-icons:       false
+rofi.modi:             run,drun,window
+
+!rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+

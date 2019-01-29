@@ -1,0 +1,9 @@
+
+Material Theme - Appbar Addon
+https://github.com/equinusocio/material-theme-appbar
+
+
+👉 Version 1.2.1 👈
+⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞
+
+  ➼ Fix some assest decodification error

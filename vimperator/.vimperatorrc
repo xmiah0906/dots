@@ -1,0 +1,91 @@
+"3.16.0 (created: 2017/02/01 00:55:15)
+colorscheme indigo
+
+imap <C-h> <C-t>
+
+" \\ set leader key
+map <Space> <Leader>
+
+nmap J <C-f>
+nmap K <C-b>
+nmap "<Leader>1" 1b
+nmap "<Leader>2" 2b
+nmap "<Leader>3" 3b
+nmap "<Leader>4" 4b
+nmap "<Leader>5" 5b
+nmap "<Leader>6" 6b
+nmap "<Leader>7" 7b
+nmap "<Leader>8" 8b
+nmap "<Leader>9" 9b
+nmap gl g$
+nmap gf g0
+nnoremap r <C-r>
+nnoremap x <C-w>
+" nnoremap "<Leader>pw" <C-S-P>
+noremap j 7j
+noremap k 7k
+noremap h 5h
+noremap l 5l
+
+map > gt
+map < gT
+map , H
+map . L
+
+noremap  <C-j> <C-t>:downloads<CR>
+inoremap <C-j> <Esc><C-t>:downloads<CR>
+cnoremap <C-j> <C-t>:downloads<CR>
+
+" \\ settings config
+set autocomplete
+set focuscontent
+set hintchars=abcdefghijklmnopqrstuvwxyz
+"set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set gui=none
+set complete=sl
+
+" \\ Search
+set ignorecase
+set incsearch
+set smartcase
+set nohlsearch=true
+
+set wildmode=list:longest,full
+set editor="termite -e vim -f"
+" set tabnumbers=true
+
+"javascript to hide statusbar
+
+"map <silent> <C-F8> :js<Space>toggle_bottombar()<Return>
+noremap <silent> <F8> :js toggle_bottombar()<CR>
+noremap : :js toggle_bottombar('on', true)<CR>:
+noremap b :js toggle_bottombar('on')<CR>b
+noremap o :js toggle_bottombar('on')<CR>o
+noremap O :js toggle_bottombar('on')<CR>O
+noremap t :js toggle_bottombar('on')<CR>t
+noremap T :js toggle_bottombar('on')<CR>T
+noremap / :js toggle_bottombar('on')<CR>/
+cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
+noremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
+cnoremap ` <CR> g<
+
+:js << EOF
+function toggle_bottombar(p) {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    if (p == 'on'){
+        bb.style.height = '';
+        bb.style.overflow = '';
+        return;
+    }
+    if (p == 'off'){
+        bb.style.height = '0px';
+        bb.style.overflow = 'hidden';
+        return;
+    }
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+}
+toggle_bottombar();
+EOF

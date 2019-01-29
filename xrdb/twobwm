@@ -1,0 +1,25 @@
+!
+! 2bwm borders with Xresources
+!
+
+twobwm.border_width:         5
+twobwm.outer_border:         2
+twobwm.inverted_colors:      false
+twobwm.enable_compton:       true
+
+! Focus and un_focus colors
+
+twobwm.focus_color:          mag
+twobwm.unfocus_color:        blk
+twobwm.outer_border_color:   blk
+
+! Fullscreen borders
+
+twobwm.fixed_color:          mag
+twobwm.fixed_unkill_color:   mag
+
+! Dont kill borders
+
+twobwm.unkill_color:         mag
+
+! vim: ft=xdefaults

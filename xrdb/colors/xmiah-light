@@ -1,0 +1,44 @@
+#define blk #edeff0
+#define gry #88898a
+#define red #335980
+#define grn #a94f44
+#define blu #bf954d
+#define wht #142830
+#define blc #241c35
+
+*.foreground:   wht
+*.background:   blk
+*.cursorColor:  red
+
+! blk
+*.color0:   blk
+
+! gry
+*.color8:   gry
+
+! red
+*.color1:   red
+*.color5:   red
+*.color9:   red
+*.color13:  red
+
+! grn
+*.color2:   grn
+*.color3:   grn
+*.color10:  grn
+*.color11:  grn
+
+! blu
+*.color4:   blu
+*.color6:   blu
+*.color12:  blu
+*.color14:  blu
+
+! wht
+*.color7:   wht
+*.color15:  wht
+
+! blc color that will not be affected by bold hightlighting.
+
+! blc
+*.color66:  blc

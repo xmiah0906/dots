@@ -1,0 +1,13 @@
+! ---
+! Rofi with Xresources
+! ---
+
+rofi.color-window: blk
+rofi.color-normal: blk, red, blk, blk, cyn
+rofi.color-activa: blk, wht, blk, blu, blk
+rofi.color-urgent: blk, wht, blk, grn, blk
+
+!rofi.color-window: #101423
+!rofi.color-normal: #101423, #D37E7E, #101423, #101423, #D5B4D4
+!rofi.color-activa: #101423, #EEFFFF, #101423, #F7B2AE, #101423
+!rofi.color-urgent: #101423, #EEFFFF, #101423, #AEA2B9, #101423

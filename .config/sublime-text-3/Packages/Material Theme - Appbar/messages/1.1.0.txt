@@ -1,0 +1,25 @@
+
+Material Theme - Appbar Addon
+https://github.com/equinusocio/material-theme-appbar
+
+
+👉 Version 1.1.0 👈
+********************************************************************************
+
+  ➼ Fix sidebar heading color when using purple and yellow accent
+
+  !! IMPORTANT NOTE !!
+  🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶
+
+  From this update the appbar doesn't get anymore the color from the material theme accent preferences.
+  So, if yuou want indigo tint, you have to set the color separately by add:
+
+  {
+    ...
+    "material_theme_appbar_indigo": true,
+    ...
+  }
+
+  By this way you can combine two colors. Check the full preferences in the readme file of the repository.
+
+  🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶🔶

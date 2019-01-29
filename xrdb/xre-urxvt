@@ -1,0 +1,128 @@
+! Desktop/Laptop Settings.
+
+Xft.dpi       : 81
+Xft.autohint  : false
+Xft.antialias : true
+Xft.hinting   : true
+Xft.hintstyle : hintslight
+Xft.rgba      : rgb
+Xft.lcdfilter : lcddefault
+
+! scrollbar
+*.scrollBar:        false
+*.scrollBar_right:  true
+*.scrollstyle:      plain
+*.scrollColor:      red
+*.thickness:        10
+
+! Set terminal padding
+*.internalBorder : 22
+*.buffered:        false
+
+! Disable ctrl+shift
+*.iso14755:     false
+*.iso14755_52:  false
+
+! perl plugins
+URxvt.perl-ext-common: default,selection-to-clipboard,clipboard,matcher,keyboard-select,config-reload
+URxvt.url-launcher:    /usr/bin/firefox
+URxvt.underlineURLs: true
+URxvt.matcher.button:  3
+*.matcher.rend.0:  fg9
+
+! Cursor
+*.cursorBlink:      true
+
+
+! -- Font: {{
+
+!*.font: -*-lemon-*
+!*.boldFont: -*-lemon-*
+
+*.font:     xft:Roboto Mono for Powerline:size=8
+
+*.letterSpace:  0
+*.lineSpace:    0
+
+!*.font:      xft:SF Mono:size=7
+*.boldFont:  
+
+!}}
+
+!Colors:  {{
+
+#define blk #101423
+#define gry #cb6767
+#define red #cb6767
+#define grn #604983
+#define blu #ab3b3b
+#define wht #eeffff
+#define blc #241c35
+
+*.foreground:   wht
+*.background:   blk
+*.cursorColor:  red
+
+! blk
+*.color0:   blk
+
+! gry
+*.color8:   gry
+
+! red
+*.color1:   red
+*.color5:   red
+*.color9:   red
+*.color13:  red
+
+! grn
+*.color2:   grn
+*.color4:   grn
+*.color10:  grn
+*.color11:  grn
+
+! blu
+*.color3:   blu
+*.color6:   blu
+*.color12:  blu
+*.color14:  blu
+
+! wht
+*.color7:   wht
+*.color15:  wht
+
+! blc color that will not be affected by bold hightlighting.
+! blc
+*.color66:  blc
+!}}
+
+!
+! 2bwm --
+!
+twobwm.border_width: 5
+twobwm.outer_border: 3
+twobwm.inverted_colors:  false
+twobwm.enable_compton:   true
+
+twobwm.focus_color:         blu
+twobwm.unfocus_color:       blk
+twobwm.outer_border_color:  blk
+
+! $Mod+f {{
+twobwm.fixed_color:         blu
+twobwm.fixed_unkill_color:  blu
+!}}
+
+! $Mod+a {{
+twobwm.unkill_color: blu
+
+!}}
+
+! ---
+! Rofi
+! ---
+
+rofi.color-window: blk
+rofi.color-normal: blk, wht, blk, grn, blk
+rofi.color-activa: blk, wht, blk, blu, blk
+rofi.color-urgent: blk, wht, blk, grn, blk

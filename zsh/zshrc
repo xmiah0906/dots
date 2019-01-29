@@ -1,0 +1,116 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+#
+##
+#
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export MEDIA="/home/xmiah/Void-Linux/xmiah/Medi"
+export PICTURE="$HOME/Imagens"
+export WALLPAPER="$PICTURE/Wallpaper"
+export DOTS="/home/xmiah/dots"
+export TwoBWM="$XDG_CONFIG_HOME/2bwm"
+export VoidLinux="$HOME/Void-Linux/xmiah"
+
+# Customize to your needs...
+zle -N zle-line-init
+zle -N zle-keymap-select
+zstyle ':completion:*' rehash true
+setopt COMPLETE_ALIASES
+setopt multios
+setopt zle
+
+# show completion menu on successive tab press
+setopt auto_menu
+# do not autoselect the first completion entry
+unsetopt menu_complete
+
+# History
+# Allow multiple terminal sessions to all append to one zsh command history
+setopt append_history
+# Save timestamp of command and duration
+setopt extended_history
+# Add commands as they are typed, don't wait until shell exit
+setopt inc_append_history
+# Imports new commands and appends typed commands to history
+setopt share_history
+setopt hist_no_store
+
+## VI-MODES
+export KEYTIMEOUT=1
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# Don't store failed command to history
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
+# only completion hostname in ~/.ssh/config
+zstyle -e ':completion:*:hosts' hosts 'reply=(${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}})'
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+LANG=en_US.UTF-8
+LANGUAGE=en_US.UTF-8
+
+export TERM=st-256color
+export TERM=xterm-256color
+export TERM=rxvt-unicode-256color
+#
+# Time
+#
+function datetime() {
+	date +'%Y-%m-%d %H:%M:%S.%3N'
+}
+
+#
+# Auto cd tmpfs
+#
+export FSTART="/home/xmiah/どうした？"
+
+if [[ $PWD == $HOME ]]; then
+	cd $FSTART
+fi
+
+export EDITOR='nvim'
+export RANGER_LOAD_DEFAULT_RC=FALSE
+export BROWSER='firefox'
+
+# alias command
+alias pacman='sudo pacman'
+alias mkdir='mkdir -p -v'
+alias mpv='mpv --loop=8'
+alias rm='rm -I -f'
+alias cp='cp -f -p'
+alias grep='grep --color=auto'
+alias du='du -c -h'
+alias sxiv='sxiv -b'
+alias ranger='env TERM=xterm-256color ranger'
+alias dmesg='dmesg -HL'
+alias ping='ping -c 3'
+alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
+alias ps_mem='sudo ps_mem'
+alias less='less -r'
+
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -lrS --color=auto -F'
+alias la='ls -lha --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+
+alias :q='exit'
+alias rsync='rsync -avzhe --process'
+alias glances='glances -2 --disable-bg --process-short-name'
+
+# alias poweroff
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'

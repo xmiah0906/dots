@@ -1,0 +1,9 @@
+
+AUTHOR: @rafamds - rafaelsantos.ml
+BASED ONE: Material Theme by Mattia Astorino
+
+********************************************************************************
+
+## PACKAGE CONTROL BUG
+
+	- Corrected a bug with the assets

@@ -1,0 +1,9 @@
+
+AUTHOR: @rafamds - rafaelsantos.ml
+BASED ONE: Material Theme by Mattia Astorino
+
+********************************************************************************
+
+To install, open your Preferences > Settings - User and replace with the following line
+
+"theme": "OneDarkMaterial.sublime-theme",

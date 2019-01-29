@@ -1,0 +1,45 @@
+! scrollbar
+
+URxvt.scrollBar:        false
+URxvt.scrollBar_right:  true
+URxvt.scrollstyle:      plain
+URxvt.scrollColor:      red
+URxvt.thickness:        10
+
+! Set terminal padding
+URxvt.internalBorder :  18
+URxvt.externalBorder:   12
+URxvt.buffered:         false
+
+! Disable ctrl+shift
+URxvt.iso14755:     false
+URxvt.iso14755_52:  false
+
+! Distance spaces letter
+URxvt.letterSpace:  0
+URxvt.lineSpace:    0
+
+
+! perl plugins
+URxvt.perl-ext-common: default,selection-to-clipboard,clipboard,matcher,keyboard-select,font-size
+URxvt.url-launcher:    /usr/bin/firefox
+URxvt.underlineURLs: true
+URxvt.matcher.button:  3
+URxvt.matcher.rend.0:  fg9
+
+! Cursor
+URxvt.cursorBlink:      true
+
+
+! -- Font: {{
+
+URxvt.font:                xft:RobotoMono Nerd Font:size=8, \
+                           xft:DejavuSansMono Nerd Font Mono:size=8, \
+				           xft:SourceCodePro+Powerline+Awesome Regular:size=8
+
+URxvt.boldFont:
+
+!}}
+
+
+! vim: ft=xdefaults

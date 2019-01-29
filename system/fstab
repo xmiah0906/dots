@@ -1,0 +1,24 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+# /dev/sda5
+UUID=563786b1-ea12-41ea-9466-7e73a3d49721	/         	ext4      	rw,relatime,data=ordered	0 1
+
+# /dev/sda10
+UUID=bdf80e38-6a89-46d6-a865-f46d7c37d011	/home     	xfs       	rw,relatime,attr2,inode64,noquota	0 2
+
+# /dev/sda1
+UUID=CCBD-19CE      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro	0 2
+
+# tmpfs automount
+tmpfs		/home/icedreamfeakr/tmpfs	tmpfs		rw,nodev,nosuid,noexec,size=2G		0 0
+
+# GLoad-Jvetic (:/D)
+UUID=01D30EE36AD02FB0 /home/icedreamfeakr/GLoad-Jvetic ntfs-3g rw,nosuid,nodev,allow_other,relatime,x-gvfs-show 0 1
+
+# Void USER
+UUID=b550e5dd-7522-4009-be2c-03cbb02ac818	/home/icedreamfeakr/Void-Linux	xfs 	defaults,rw,auto 	0 	2 
+
+# swapfile
+/swapfile 	none 	swap defaults 	0 0
