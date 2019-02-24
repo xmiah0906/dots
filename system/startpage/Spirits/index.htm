@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>K.W.L</title>
+        <link rel="shortcut icon" type="image/png" href="icons/favicon_01.png"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+               function updateClock() {
+                        var m = new Date();
+                        var dateString = ("0" + m.getHours()).slice(-2) + "`" + ("0" + m.getMinutes()).slice(-2)
+                        setTimeout(updateClock, 1000);
+               }
+               updateClock();
+               function updateDate() {
+              var days = ['dimanche','lundi','mardi','mercredi','jeudi.','vendredi','samedi'];
+              var months=['janvier', 'février', 'mars', 'avril', 'mai','juin', 'juillet', 'août','septembre','octobre', 'novembre','décembre'];
+              var m = new Date();
+              var dateString = (days[ m.getDay() ])  + " " +  ("0" + m.getDate()).slice(-2) + " " + (months[ m.getMonth() ])   + " " + m.getFullYear()               
+                        document.getElementById('date').innerHTML = dateString;
+               }
+               updateDate();
+        });
+        </script>
+</head>
+
+<body>
+	<div id="container">
+                    <div id="banner">
+                            <div class="header">
+                                <div id="time">
+                                        <div id="date">dd</div>
+                                </div>
+                                <div class="message">
+                                        WELCOME; BIENVENUE; いらっしゃいませ 
+                                </div>
+                            </div>
+                            <div class="form">
+                                <input  id="searchbox" name="q" type="text" autocomplete="off" class="cleardefault" maxlength="100"   placeholder="type faster than the speed of sound ..." size="17" autofocus="autofocus" />
+                                <input type="submit" id="image-button" value=""></input>
+                            </div>
+                    </div>
+                    <div class="footer">
+                        <div class="nav">
+                                <ul>
+                                        <a href="http://www.kissanime.ru/">
+                                                <li> アニメ  </li>
+                                        </a>
+                                        <a href="http://exhentai.org/">
+                                                <li> へんたい</li>
+                                        </a>
+                                        <a href="http://www.4chan.org/">
+                                                <li>yotsuba</li>
+                                        </a>
+                                        <a href="https://soundcloud.com/stream">
+                                                <li>soundcloud</li>
+                                        </a>
+                                        <a href="http://www.pixiv.net/">
+                                                <li>ピクシブ</li>
+                                        </a>
+                                        <a href="https://www.nyaa.si/">
+                                                <li>nya.se</li>
+                                        </a>
+                                </ul>
+                        </div>
+                        <div class="button">
+                                <button type="button" id="my-button">SHUFFLE</button>
+                        </div>
+                    </div>
+              </div>
+</body>
+<script type="text/javascript" src="js/banner.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+</html>

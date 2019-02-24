@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Far Away from the Galaxy</title>
+	<link rel="shortcut icon" type="image/png" href="icons/favicon_01.png" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+</head>
+
+<body>
+	<div id="container">
+		<div id="nav">
+			<div id="border">
+				<button id="first-btn" class="button active" data-rel="#box1">01</button>
+				<button id="second-btn" class="button" data-rel="#box2">02</button>
+				<button id="third-btn" class="button" data-rel="#box3">03</button>
+			</div>
+			<div class="sidebar">
+				<div class="box" id="box1">
+					<h1>Yotsuba</h1>
+					<a href="http://boards.4chan.org/a/">animu</a>
+					<a href="http://boards.4chan.org/c/">cute stuff</a>
+					<a href="http://boards.4chan.org/w/">weeb walls</a>
+					<a href="http://boards.4chan.org/jp/">jap shit</a>
+					<a href="http://boards.4chan.org/v/">vidyagaems</a>
+					<a href="http://boards.4chan.org/vp/">chimpokomon</a>
+					<a href="http://boards.4chan.org/vg/">vidya general</a>
+					<a href="http://boards.4chan.org/wg/">rice and walls</a>
+					<a href="http://boards.4chan.org/h/">chinese pron</a>
+					<a href="http://boards.4chan.org/gif/">nsfw</a>
+				</div>
+				<div class="box" id="box2">
+					<h1>美術</h1>
+					<a href="https://www.youtube.com/">youtube</a>
+					<a href="https://soundcloud.com/stream">soundcloud</a>
+					<a href="http://www.last.fm/">last.fm</a>
+					<a href="http://dojin.co/">dojin</a>
+					<a href="https://bandcamp.com/">bandcamp</a>
+					<a href="http://www.pixiv.net/">pixiv</a>
+					<a href="http://www.deviantart.com/browse/all/">deviantart</a>
+					<a href="https://www.tumblr.com/dashboard">tumblr</a>
+					<a href="http://danbooru.donmai.us/">danbooru</a>
+					<a href="http://konachan.com">konachan</a>
+				</div>
+				<div class="box" id="box3">
+					<h1> アニメ</h1>
+					<a href="http://kissanime.ru/">streaming</a>
+					<a href="http://exhentai.org/">panda</a>
+					<a href="https://mangadex.org/">mangadex</a>
+					<a href="https://manga.madokami.al/">madokami</a>
+					<a href="https://myanimelist.net/">mal</a>
+					<a href="https://www.nyaa.se/">nyaa</a>
+					<a href="http://hitomi.la/">hitomi</a>
+					<a href="http://erogedownload.com/">eroge</a>
+					<a href="http://mangastream.com/">mangastream</a>
+					<a href=""></a>
+				</div>
+			</div>
+		</div>
+		<div class="form">
+			<input id="searchbox" name="q" type="text" autocomplete="off" class="cleardefault" maxlength="100" placeholder="search engine ..."
+			    size="17" autofocus="autofocus" />
+			<input type="submit" id="image-button" value=""></input>
+		</div>
+		<div id="details">
+			<div id="weather">
+				<h2 id="description"></h2>
+				<h3 id="temp_curr"></h3>
+			</div>
+		</div>
+		<div id="message"></div>
+	</div>
+	<script src="js/index.js"></script>
+	<script src="js/search.js"></script>
+	<script src="js/weather.js"></script>
+</body>
+
+</html>
