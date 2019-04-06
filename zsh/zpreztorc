@@ -36,7 +36,6 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'fasd' \
   'git' \
   'command-not-found' \
   'tmux' \
@@ -44,7 +43,7 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'autosuggestions' 
+  'autosuggestions'
 
 #
 # Autosuggestions
@@ -85,8 +84,8 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # Use all avaiable git information
  zstyle ':prezto:module:git:info' verbose 'yes'
 
-# The format of the [git-log][8] output is configurable via the following style, where context is *brief*, *oneline*, and *medium*, which will be passed to the `--pretty=format:` switch.
- zstyle ':prezto:module:git:log:context' format 'medium'
+# The format of the [git-log][8] output is configurable via the following style, where context is *brief*, *oneline* and *medium*, which will be passed to the `--pretty=format:` switch.
+ zstyle 'prezto:module:git:log:context' format 'medium'
 
 #
 # GNU Utility
@@ -100,7 +99,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 #
 
 # Set the query found color.
- zstyle ':prezto:module:history-substring-search:color' found 'bg=magenta,fg=white,bold'
+ zstyle ':prezto:module:history-substring-search:color' found 'bg=magenta,fb=white,bold'
 
 # Set the query not found color.
  zstyle ':prezto:module:history-substring-search:color' not-found 'bg=red,fb=white,bold'
@@ -129,7 +128,6 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-#zstyle ':prezto:module:prompt' theme 'cloud' "メディア"
 zstyle ':prezto:module:prompt' theme 'agnoster'
 
 # Set the working directory prompt display length.
@@ -229,7 +227,7 @@ zstyle ':prezto:module:prompt' theme 'agnoster'
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
 # Set the default session name:
-# zstyle ':prezto:module:tmux:session' name 'hexi'
+# zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
 
 #
 # Utility
