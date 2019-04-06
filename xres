@@ -1,10 +1,10 @@
 ! ╻ ╻┏━┓┏━╸┏━┓┏━┓╻ ╻┏━┓┏━╸┏━╸┏━┓
 ! ┏╋┛┣┳┛┣╸ ┗━┓┃ ┃┃ ┃┣┳┛┃  ┣╸ ┗━┓
 ! ╹ ╹╹┗╸┗━╸┗━┛┗━┛┗━┛╹┗╸┗━╸┗━╸┗━┛
-! by mhess
+! by LFS
 ! managed like they are supposed to be
 
-#include ".xrdb/colors/palenight"
+#include ".xrdb/colors/16-color-dark"
 #include ".xrdb/xresources"
 #include ".xrdb/sxiv"
 #include ".xrdb/xft"
