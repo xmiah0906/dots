@@ -1,0 +1,262 @@
+
+; vim:ft=cfg
+;     _____
+;    (, /   )    /)      /)
+;     _/__ / ___//      (/_ _   __
+;     /     (_)(/_ (_/_/_) (_(_/ (_
+;  ) /            .-/
+; (_/            (_/
+
+[colors]
+bg = ${xrdb:color0}
+fg = ${xrdb:color7}
+
+
+blk = ${xrdb:color0}
+red = ${xrdb:color1}
+grn = ${xrdb:color2}
+ylw = ${xrdb:color3}
+blu = ${xrdb:color4}
+mag = ${xrdb:color5}
+cyn = ${xrdb:color6}
+wht = ${xrdb:color7}
+
+bblk = ${xrdb:color8}
+bred = ${xrdb:color9}
+bgrn = ${xrdb:color10}
+bylw = ${xrdb:color11}
+bblu = ${xrdb:color12}
+bmag = ${xrdb:color13}
+bcyn = ${xrdb:color14}
+bwht = ${xrdb:color15}
+
+[global/wm]
+margin-top        = 0
+margin-bottom     = 0
+override-redirect = true
+
+[bar/base]
+monitor = ${env:MONITOR:eDP1}
+width    = 100%
+height   = 20
+offset-x = 0
+offset-y = 0
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+border-color = ${colors.bg}
+
+font-0 = lemon:pixelsize=8;1
+font-1 = scientifica:size=8:antialias=true;1
+font-2 = Siji:size=9;2
+font-3 = "icomoon\-feather:size=9;2"
+font-4 = Material Icons:size=9;2
+
+modules-left   = launcher workspace title
+modules-center =
+modules-right  = network temperature fan volume battery date
+
+border-size = 6
+padding-left        = 0
+padding-right       = 0
+module-margin-left  = 1
+module-margin-right = 0
+
+bottom = true
+
+[module/launcher]
+type = custom/text
+content = " Funtoo Linux"
+
+; "content" has the same properties as "format-NAME"
+content-background = ${colors.grn}
+content-foreground = ${colors.bg}
+content-padding = 2
+
+[module/network]
+type          = internal/network
+interface     = wlan0
+ping-interval = 3
+
+format-connected = <label-connected>
+label-connected =  "   %downspeed:6%  "
+format-connected-background = ${colors.ylw}
+format-connected-foreground = ${colors.bg}
+
+format-disconnected =
+
+[module/date]
+type                     = internal/date
+interval                 = 1
+date                     = " %I:%M"
+format-prefix            = 
+format-padding           = 2
+
+format-background        = ${colors.fg}
+format-foreground        = ${colors.bg}
+
+[module/title]
+type = internal/xwindow
+format-prefix = " "
+label-maxlen = 150
+format-padding = 2
+format-prefix-foreground = ${colors.grn}
+
+[module/fan]
+type = custom/script
+format = " <label>  "
+
+format-foreground = ${colors.bg}
+format-background = ${colors.blu}
+exec-if = sensors
+exec = "sensors | grep fan1 | awk '{print $2,$3}'"
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.bg}
+format-padding = 0
+
+[module/temperature]
+type             = internal/temperature
+thermal-zone     = 0
+warn-temperature = 65
+
+format      = <ramp><label>
+format-warn = "<ramp><label-warn>"
+
+label                 = "%temperature-c%"
+label-warn            = "%temperature-c%"
+label-warn-foreground = ${colors.red}
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+
+format-foreground = ${colors.bg}
+format-background = ${colors.grn}
+format-warn-foreground = ${colors.fg}
+format-warn-background = ${colors.wht}
+
+format-padding = 2
+
+[module/workspace]
+type              = custom/script
+interval          = 0.01
+exec              = echo $(( $(xprop -root _NET_CURRENT_DESKTOP | sed -e 's/_NET_CURRENT_DESKTOP(CARDINAL) = //') + 1))
+format-padding    = 2
+format-background = ${colors.red}
+format-foreground = ${colors.fg}
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = false
+
+format = <label>
+format-prefix = 
+format-padding    = 1
+
+label=%percentage%%
+label-padding = 1
+
+format-background = ${colors.ylw}
+format-foreground = ${colors.bg}
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+format-muted = <label-muted>
+
+label-muted             = muted
+label-muted-padding     = 1
+
+format-volume-prefix = " "
+format-muted-prefix  = " "
+
+format-volume-padding = 2
+format-muted-padding    = 2
+
+format-volume-background = ${colors.mag}
+format-muted-background  = ${colors.mag}
+
+format-volume-foreground = ${colors.bg}
+format-muted-foreground  = ${colors.bg}
+
+[module/cpu]
+type                     = internal/cpu
+label                    = "%percentage%%"
+label-padding            = 1
+format-padding           = 2
+format-prefix            = 
+
+format-background = ${colors.grn}
+format-foreground = ${colors.bg}
+
+[module/ram]
+type     = internal/memory
+interval = 3
+
+format           = <label>
+format-padding   = 2
+label            = "%percentage_used%%"
+
+format-prefix = 
+format-background = ${colors.blu}
+format-foreground = ${colors.bg}
+
+[module/workspace2bwm]
+type              = custom/script
+exec              = 2bws.sh
+interval          = 0.01
+format-padding    = 1
+scroll-up         = exec wscycle.sh -f
+scroll-down       = exec wscycle.sh -r
+
+[module/essid]
+inherit = module/network
+
+format-connected = <label-connected>
+
+format-connected-prefix            = ""
+format-connected-prefix-padding    = 0
+format-connected-prefix-foreground = ${colors.magenta}
+
+label-connected            = "%essid%"
+label-connected-padding    = 1
+
+format-disconnected = <label-disconnected>
+
+format-disconnected-prefix            = ""
+format-disconnected-prefix-padding    = 0
+format-disconnected-prefix-foreground = ${colors.magenta}
+
+label-disconnected            = "disconnected"
+label-disconnected-padding    = 1
+
+[module/battery]
+type          = internal/battery
+full-at       = 98
+battery       = BAT1
+adapter       = AC1
+poll-interval = 5
+
+format-charging-prefix      = ""
+format-discharging-prefix   = ""
+format-full-prefix          = ""
+
+label-charging      = " %percentage%% "
+label-discharging   = " %percentage%% "
+label-full          = " %percentage%% "
+
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding    = 1
+
+format-charging-background = ${colors.grn}
+format-discharging-background = ${colors.cyn}
+format-full-background    = ${colors.ylw}
+
+format-charging-foreground = ${colors.bg}
+format-discharging-foreground = ${colors.bg}
+format-full-foreground    = ${colors.bg}
+

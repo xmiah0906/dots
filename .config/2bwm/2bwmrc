@@ -1,0 +1,59 @@
+# config 2bwm hotkeys with sxhkd
+
+super + d
+	rofi -show drun -modi drun -display-run 'Run' -display-drun "2BWM " -hide-scrollbar
+
+super + w
+	firefox-bin
+
+super + v
+	pavucontrol
+
+# Brightness
+
+XF86MonBrightness{Up,Down}
+    xbacklight {-inc 5,-dec 5}
+
+# Volume
+
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    ~/bin/vol.sh {-i 4,-d 4,-t}
+
+super + F4
+	amixer -D pulse sset Capture toggle
+
+# Toggle Touchpad
+super + F2
+	~/bin/toggle-touchpad.sh
+
+# Screensaves
+super + F3
+	~/bin/caffeine.sh
+
+XF86Display
+    sudo pm-suspend
+
+super + @F7
+	xset dpms force off
+
+# Screenshots
+
+super + @Print
+	~/bin/scr
+
+# Random Wallpapers
+# Dark Themes
+super + F1
+	wal -a 96 -i "$HOME/Imagens/Wallpapers" ;  \
+    ~/.config/2bwm/panel/dark-wal-set
+
+# Light Themes
+super + shift + F1
+	wal -a 96 -i "$HOME/Imagens/Wallpapers" -l ; \
+    ~/.config/2bwm/panel/wal-set
+
+# Reload SXHKD config
+super + Escape
+	pkill -USR1 -x sxhkd; \
+	notify-send 'SXHKD RELOADED CONFIGURATION'
+

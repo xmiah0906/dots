@@ -1,0 +1,165 @@
+; vim:ft=cfg
+;     _____
+;    (, /   )    /)      /)
+;     _/__ / ___//      (/_ _   __
+;     /     (_)(/_ (_/_/_) (_(_/ (_
+;  ) /            .-/
+; (_/            (_/
+
+[colors]
+bg = ${xrdb:color0}
+fg = ${xrdb:color7}
+
+red = ${xrdb:color1}
+grn = ${xrdb:color2}
+ylw = ${xrdb:color3}
+blu = ${xrdb:color4}
+mag = ${xrdb:color5}
+cyn = ${xrdb:color6}
+wht = ${xrdb:color7}
+bblk = ${xrdb:color8}
+
+[global/wm]
+margin-top        = 0
+margin-bottom     = 0
+override-redirect = true
+
+[bar/base]
+monitor = ${env:MONITOR:eDP1}
+width    = 100%
+height   = 25
+offset-x = 0
+offset-y = 0
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+border-color = ${colors.bblk}
+
+font-0=lemon:size=8;2
+font-1=Siji:size=8;2
+font-2=FontAwesome:size=8;2
+
+modules-left   = cpu ram battery title
+modules-center =
+modules-right  = essid volume backlight date
+
+border-size = 0
+padding-left        = 1
+padding-right       = 1
+module-margin-left  = 2
+module-margin-right = 0
+
+bottom = true
+
+[module/network]
+type          = internal/network
+interface     = wlan0
+ping-interval = 30
+
+[module/date]
+type                     = internal/date
+interval                 = 30
+; date                     = "|  %I:%M %p  "
+time                     = "| %I:%M %p "
+time-alt                 = "| %A %d %B "
+
+label = %time%
+format = <label>
+; format-prefix            = 
+; format-prefix-foreground = ${colors.grn}
+format-padding           = 0
+
+[module/title]
+type = internal/xwindow
+format-prefix = "  "
+label-maxlen = 50
+format-padding = 2
+format-prefix-foreground = ${colors.ylw}
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = false
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.ylw}
+format-padding    = 1
+
+label=%percentage%%
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+format-muted = <label-muted>
+
+label-muted             = muted
+
+format-volume-prefix = " "
+format-muted-prefix  = " "
+
+format-volume-padding = 1
+format-muted-padding    = 1
+
+format-volume-prefix-foreground = ${colors.mag}
+format-muted-prefix-foreground  = ${colors.mag}
+
+[module/cpu]
+type                     = internal/cpu
+label                    = " %percentage%%"
+format-padding           = 1
+format-prefix            = 
+
+format-prefix-foreground = ${colors.grn}
+
+[module/ram]
+type     = internal/memory
+interval = 3
+
+format           = <label>
+format-padding   = 1
+label            = " %percentage_used%%"
+
+format-prefix = 
+format-prefix-foreground = ${colors.blu}
+
+[module/essid]
+inherit = module/network
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+format-connected-prefix     = ""
+format-disconnected-prefix  = ""
+
+label-connected             = " %essid%"
+label-disconnected          = " disconnected"
+
+format-connected-padding     = 1
+format-disconnected-padding  = 1
+format-connected-prefix-foreground     = ${colors.cyn}
+format-disconnected-prefix-foreground  = ${colors.cyn}
+
+[module/battery]
+type          = internal/battery
+full-at       = 98
+battery       = BAT1
+adapter       = AC0
+poll-interval = 5
+
+format-charging-prefix      = ""
+format-discharging-prefix   = ""
+format-full-prefix          = ""
+
+label-charging      = " %percentage%% "
+label-discharging   = " %percentage%% "
+label-full          = " %percentage%% "
+
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding    = 1
+
+format-charging-prefix-foreground = ${colors.red}
+format-discharging-prefix-foreground = ${colors.red}
+format-full-prefix-foreground = ${colors.red}

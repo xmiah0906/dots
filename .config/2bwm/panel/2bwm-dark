@@ -1,0 +1,203 @@
+[colors]
+black  = ${xrdb:color0}
+red    = ${xrdb:color1}
+yellow = ${xrdb:color2}
+white  = ${xrdb:color15}
+
+[dims]
+padding = 1
+
+[bar/top]
+width  = 398
+height = 22
+
+;offset-x = 1187
+
+;center
+offset-x = 761
+offset-y = 2
+
+radius            = 3
+monitor           = eDP1
+overrite-redirect = true
+
+font-0 = Lemon:pixelsize=8;1
+font-1 = FontAwesome:pixelsize=8;1
+font-2 = Siji:pixelsize=8;2
+font-3 = unifont:pixelsize=8
+font-4 = Iosevka Medium:size=7;1
+
+background = ${colors.black}
+foreground = ${colors.red}
+
+border-size  = 0
+border-color = ${colors.black}
+
+modules-center = wlan cpu temperature fan volume date battery
+
+fixed-center  = true
+tray-position = none
+bottom        = true
+
+;allow
+[module/allow]
+type = custom/text
+content = " | "
+content-foreground = ${colors.red}
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal><label-connected>
+label-connected =  " %downspeed:6%  "
+label-connected-foreground = ${colors.white}
+
+format-disconnected =
+
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
+
+ramp-signal-foreground = ${colors.red}
+
+
+; Battery
+[module/battery]
+type    = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 95
+
+format-padding = 1
+
+format-charging            = <label-charging>
+format-charging-foreground = ${colors.yellow}
+format-charging-padding    = ${dims.padding}
+
+format-discharging            = <ramp-capacity> <label-discharging>
+format-discharging-padding    = ${dims.padding}
+
+format-full            = <label-full>
+format-full-background = ${colors.red}
+format-full-foreground = ${colors.white}
+format-full-padding    = ${dims.padding}
+
+label-charging    = Charging: %percentage%%
+label-discharging = "%percentage%%"
+label-full        = Full Capacity
+
+label-discharging-foreground = ${colors.white}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-foreground = ${colors.red}
+
+; Date
+[module/date]
+type = internal/date
+interval = 1.0
+
+date = "%Y-%M-%d"
+
+time-alt = %a %d %b
+time     = %I:%M %p
+
+label             = %time%
+format            = "  <label>"
+
+;light themes
+;format-foreground = ${colors.black}
+
+;dark themes
+format-foreground = ${colors.white}
+
+format-background = ${colors.red}
+format-padding    = 2
+
+; Volume
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume><label-volume>
+label-volume = "%percentage%% "
+label-volume-foreground = ${colors.white}
+label-volume-padding = ${dims.padding}
+
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-foreground = ${colors.red}
+
+format-muted = <label-muted>
+label-muted =  muted
+label-muted-foreground = ${colors.red}
+label-muted-background = ${colors.black}
+label-muted-padding = ${dims.padding}
+
+;cpu
+[module/cpu]
+type     = internal/cpu
+interval = 2
+
+format-padding    = ${dims.padding}
+
+;dark themes
+format-foreground = ${colors.white}
+format-background = ${colors.red}
+
+format-prefix = "  "
+label         = "%percentage%%  "
+
+;dark themes
+label-foreground = ${colors.white}
+label-background = ${colors.red}
+
+;fan
+[module/fan]
+type = custom/script
+format = " <label>  "
+
+;dark themes
+format-foreground = ${colors.white}
+
+format-background = ${colors.red}
+exec-if = sensors
+exec = "sensors | grep fan1 | awk '{print $2,$3}'"
+
+format-prefix = "  "
+format-prefix-background = ${colors.red}
+format-prefix-foreground = ${colors.white}
+
+format-padding = 0
+
+;temperature
+[module/temperature]
+type             = internal/temperature
+thermal-zone     = 0
+warn-temperature = 65
+
+format      = <ramp><label>
+format-warn = " <ramp> <label-warn>"
+
+label                 = "%temperature-c%  "
+label-foreground      = ${colors.red}
+label-warn            = "%temperature-c%  "
+label-warn-foreground = ${colors.red}
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+
+ramp-foreground = ${colors.white}
+
+[global/wm]
+margin-top    = 1
+margin-bottom = 1
+
+; vim:ft=dosini
