@@ -1,3 +1,0 @@
-all:
-	mkfontdir
-	mkfontscale
