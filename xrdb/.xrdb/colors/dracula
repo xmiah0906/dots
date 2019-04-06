@@ -1,0 +1,26 @@
+! -- Title: Dracula
+! -- Author: Dracula
+! -- Created: 2016
+
+#define bg    #282a36
+#define fg    #f8f8f2
+#define curs  #f8f8f2
+
+#define blk       #282a36
+#define bblk      #4d4d4d
+#define red       #ff5555
+#define bred      #ff6e67
+#define grn       #50fa7b
+#define bgrn      #5af78e
+#define ylw       #f1fa8c
+#define bylw      #f4f99d
+#define blu       #bd93f9
+#define bblu      #caa9fa
+#define mag       #ff79c6
+#define bmag      #ff92d0
+#define cyn       #8be9fd
+#define bcyn      #9aedfe
+#define wht       #bfbfbf
+#define bwht      #e6e6e6
+
+! vim: ft=xdefaults

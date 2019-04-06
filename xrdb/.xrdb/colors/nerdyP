@@ -1,0 +1,26 @@
+! -- Title: NerdyP
+! -- Author: NerdyPepper
+! -- Created: 2018
+
+#define bg    #081018
+#define fg    #a3a7a8
+#define curs  #a3a7a8
+
+#define blk       #081018
+#define bblk      #5c5c5c
+#define red       #6d7a8b
+#define bred      #6d7a8b
+#define grn       #6d7a8b
+#define bgrn      #3a3a3a
+#define ylw       #6d7a8b
+#define bylw      #525252
+#define blu       #6d7a8b
+#define bblu      #696969
+#define mag       #6d7a8b
+#define bmag      #bdc1c3
+#define cyn       #70a070
+#define bcyn      #6d7a8b
+#define wht       #a3a7a8
+#define bwht      #ccd0d2
+
+! vim: ft=xdefaults

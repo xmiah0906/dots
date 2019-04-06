@@ -1,0 +1,26 @@
+! -- Title: skyfall
+! -- Author: u/EmpressNoodle
+! -- Created: 2019
+
+#define bg    #282F37
+#define fg    #F1FCF9
+#define curs  #F1FCF9
+
+#define blk       #282F37
+#define bblk      #465463
+#define red       #DB86BA
+#define bred      #D04E9D
+#define grn       #74DD91
+#define bgrn      #4BC66D
+#define ylw       #E49186
+#define bylw      #DB695B
+#define blu       #75DBE1
+#define bblu      #3DBAC2
+#define mag       #B4A1DB
+#define bmag      #825ECE
+#define cyn       #9EE9EA
+#define bcyn      #62CDCD
+#define wht       #F1FCF9
+#define bwht      #E0E5E5
+
+! vim: ft=xdefaults

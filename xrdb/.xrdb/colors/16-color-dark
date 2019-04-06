@@ -1,0 +1,27 @@
+! -- Title:         Base16 Default Dark
+! -- Author:        Chrisk Kempson
+! -- Created:       2014
+
+#define bg      #181818
+#define fg      #d8d8d8
+#define curs    #d8d8d8
+
+#define blk     #181818
+#define bblk    #585858
+#define red     #ab4642
+#define bred    #ab4642
+#define grn     #a1b56c
+#define bgrn    #a1b56c
+#define ylw     #f7ca88
+#define bylw    #f7ca88
+#define blu     #7cafc2
+#define bblu    #7cafc2
+#define mag     #ba8baf
+#define bmag    #ba8baf
+#define cyn     #86c1b9
+#define bcyn    #86c1b9
+#define wht     #d8d8d8
+#define bwht    #f8f8f8
+
+
+! vim:ft=cfg

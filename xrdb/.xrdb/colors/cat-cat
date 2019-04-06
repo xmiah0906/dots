@@ -1,0 +1,26 @@
+! -- Title: Cat-Cat
+! -- Author: OP
+! -- Created: 2017
+
+#define fg    #e4e4e4
+#define bg    #262626
+#define curs  #e4e4e4
+
+#define blk       #262626
+#define bblk      #868686
+#define red       #3e3a94
+#define bred      #3e3a94
+#define grn       #534dc0
+#define bgrn      #534dc0
+#define ylw       #8081ff
+#define bylw      #8081ff
+#define blu       #8081ff
+#define bblu      #8081ff
+#define mag       #a246d1
+#define bmag      #a246d1
+#define cyn       #bc7190
+#define bcyn      #bc7190
+#define wht       #eeffff
+#define bwht      #eeffff
+
+! vim: ft=xdefaults

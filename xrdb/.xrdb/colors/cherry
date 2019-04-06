@@ -1,0 +1,26 @@
+! -- Title: Cherry
+! -- Author: turquose-hexegon
+! -- Created: 2019
+
+#define bg    #021B21
+#define fg    #E8DFD6
+#define curs  #E8DFD6
+
+#define blk       #021B21
+#define bblk      #234149
+#define red       #c2454e
+#define bred      #ef5847
+#define grn       #7cbf9e
+#define bgrn      #a2d9b1
+#define ylw       #8a7a63
+#define bylw      #beb090
+#define blu       #2e3340
+#define bblu      #61778d
+#define mag       #ff5879
+#define bmag      #ff99a1
+#define cyn       #44b5b1
+#define bcyn      #9ed9d8
+#define wht       #E8DFD6
+#define bwht      #f6f6c9
+
+! vim: ft=xdefaults
