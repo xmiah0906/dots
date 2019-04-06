@@ -1,9 +1,0 @@
-
-AUTHOR: @rafamds - rafaelsantos.ml
-BASED ONE: Material Theme by Mattia Astorino
-
-********************************************************************************
-
-## SIDEBAR ICONS
-
-	- New Laravel's Blade icon

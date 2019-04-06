@@ -1,0 +1,59 @@
+#!/bin/bash
+# Tiny colored fetch script
+# Requires Typicons Font to display the icons
+# elenapan @ github
+
+f=3 b=4
+for j in f b; do
+  for i in {0..7}; do
+    printf -v $j$i %b "\e[${!j}${i}m"
+  done
+done
+d=$'\e[1m'
+t=$'\e[0m'
+v=$'\e[7m'
+
+# Items
+sep=
+s=$d$f0$sep$t
+
+o=
+osname=$(cat /etc/*-release | grep -i name | cut -d'=' -d'"' -f2 | sed -n 1p)
+
+w=
+wifiname="$(sudo iwgetid | cut -d \" -f2)"
+
+h=
+#wmname="$(xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")"
+wmname="$(ps -e | grep -m 1 -o -F \
+    -e "2bwm" \
+    -e "dwm" \
+    -e "awesome")"
+
+k=
+kernel="$(uname -r)"
+
+r=
+resolution="$(xwininfo -root | grep geometry | awk '{print $2}' | cut -d + -f1)"
+
+sh=
+shell=$(basename $SHELL)
+
+# (\ /)
+# ( · ·)
+# c(")(")
+
+# (\ /)
+# ( . .)
+# c(")(")
+
+tput clear
+cat << EOF
+             $d$f8$c1$o  $t$osname
+             $f4$h  $t$wmname
+   (\ /)     $f3$k  $t$kernel
+   ( $d. .$t)    $f2$sh  $t$shell
+   c($f1"$t)($f1"$t)   $f5$r  $t$resolution
+             $f4$w  $t$wifiname
+
+EOF

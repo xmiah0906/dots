@@ -1,0 +1,82 @@
+#!/bin/bash
+# Tiny colored fetch script
+# Requires Typicons Font to display the icons
+# elenapan @ github
+
+f=3 b=4
+for j in f b; do
+  for i in {0..7}; do
+    printf -v $j$i %b "\e[${!j}${i}m"
+  done
+done
+d=$'\e[1m'
+t=$'\e[0m'
+v=$'\e[7m'
+
+# Items
+sep=
+s=$d$f0$sep$t
+
+o=
+osname=$(cat /etc/*-release | grep -i name | cut -d'=' -d'"' -f2 | sed -n 1p)
+
+w=
+wifiname="$(sudo iwgetid | cut -d \" -f2)"
+
+h=
+wmname="$(ps -e | grep -m 1 -o -F \
+    -e "2bwm" \
+    -e "dwm" \
+    -e "awesome")"
+
+k=
+kernel="$(uname -r)"
+
+r=
+resolution="$(xwininfo -root | grep geometry | awk '{print $2}' | cut -d + -f1)"
+
+sh=
+shell="$(basename $SHELL)"
+version="$($SHELL --version | awk '{print $2}')"
+
+f=
+term="xst-256color"
+#check="$(ps -o 'ppid=' -p $$)"
+#term="$(ps -o 'cmd=' -p $check | awk '{print $1}')"
+
+e=
+packages=$(eix-installed -a | wc -l)
+emerge="(emerge)"
+
+# (\ /)
+# ( . .)
+# c(")(")
+
+#tput clear
+#cat << EOF
+#             $d$f8$c1$o  $t$osname
+#             $f4$h  $t$wmname
+#   (\ /)     $f3$k  $t$kernel
+#   ( $d. .$t)    $f2$sh  $t$shell $version
+#   c($f1"$t)($f1"$t)   $f5$r  $t$resolution
+#             $f4$w  $t$wifiname
+#
+#EOF
+
+tput clear
+cat << EOF
+
+
+    /^--^\     /^--^\     /^--^\          $d$f2$c1$o  $t$osname
+    \____/     \____/     \____/          $f4$h  $t$wmname
+   /      \   /      \   /      \         $f2$k  $t$kernel
+  |        | |        | |        |        $f8$e  $t$packages $t$emerge
+   \__  __/   \__  __/   \__  __/
+|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|
+| | | |\ \| | |/ /| | | | | | \ \ | |     $f8$f  $t$term
+######/ /######\ \###########/ /#####     $f2$sh  $t$shell $t$version
+| | | \/| | | | \/| | | | | |\/ | | |     $f5$r  $t$resolution
+|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|     $f4$w  $t$wifiname
+
+EOF
+

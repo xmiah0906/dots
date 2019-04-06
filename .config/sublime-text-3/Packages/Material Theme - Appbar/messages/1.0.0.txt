@@ -1,9 +1,0 @@
-
-Material Theme - Appbar Addon
-https://github.com/equinusocio/material-theme-appbar
-
-
-👉 Version 0.1.0 👈
-********************************************************************************
-
-  ➼ Add default teal App Bar style

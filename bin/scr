@@ -2,27 +2,22 @@
 #
 # Take a screenshot and display a notification.
 #
-# Created by Dylan Araps.
-#
 # Depends on: imagemagick, libnotify (patched with id support)
 
-# Screenshot directory
 scr_dir="${HOME}/Imagens/Screenshots"
-mkdir -p "$scr_dir" || { printf "%s\n" "Error: Couldn't create screenshot directory"; exit; }
 
 # Use printf to store the current date/time as variables.
-printf -v date "%(%F)T"
-printf -v time "%(%I-%M-%S)T"
+printf -v date '%(%F)T' -1
+printf -v time '%(%I-%M-%S)T' -1
 
 # Create current date format.
 mkdir -p "${scr_dir}/${date}"
-
-# Name the screenshot
-scr="${scr_dir}/${date}/${date}-${time}.png"
+scr="${scr_dir}/${date}/${date}-${time}"
 
 # Send the notification
 #notify-send -t 3000 -u low " SAVED SCREENSHOT AS ${scr/*\/}"
-notify-send --expire-time=5000 -i view-fullscreen "Screenshot!~" "Saved Screenshots as ${scr/*\/} !" --icon="/home/xmiah/.config/dunst/camera_2.png" ; sleep 0.5
+notify-send --expire-time=5000 -i view-fullscreen "Screenshot!~" "Saved Screenshots as ${scr/*\/}.png !" --icon="/home/xmiah/.config/dunst/camera_2.png" ; sleep 0.5
 
 # Take the screenshot and crop out my second monitor.
-import -window root -pause 2 -gravity north -crop 1600x900+0+0 "$scr" &
+import -window root -pause 2 "$scr".png &
+cp -f "$scr".png "${scr_dir}/current.png"

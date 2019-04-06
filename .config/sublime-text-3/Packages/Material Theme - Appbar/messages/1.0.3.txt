@@ -1,9 +1,0 @@
-
-Material Theme - Appbar Addon
-https://github.com/equinusocio/material-theme-appbar
-
-
-👉 Version 1.0.3 👈
-********************************************************************************
-
-  ➼ Fix tab bar spacing when tab_scroll is disabled

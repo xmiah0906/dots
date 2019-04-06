@@ -1,9 +1,0 @@
-
-Material Theme - Appbar Addon
-https://github.com/equinusocio/material-theme-appbar
-
-
-👉 Version 1.0.4 👈
-********************************************************************************
-
-  ➼ Fix tabs and sidebar height when use small tabs and disabled tabs scrolling

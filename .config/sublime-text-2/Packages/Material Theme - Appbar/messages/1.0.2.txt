@@ -1,9 +1,0 @@
-
-Material Theme - Appbar Addon
-https://github.com/equinusocio/material-theme-appbar
-
-
-👉 Version 1.0.2 👈
-********************************************************************************
-
-  ➼ Now instrallation through Package Control will work as expected
