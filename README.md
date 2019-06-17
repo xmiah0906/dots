@@ -3,6 +3,9 @@
 </div>
 
 ***SCREENSHOTS***
++ **`Desu-chan`**
+
+![Openbox](https://i.imgur.com/fJywCAN.png "desu-chan/openbox")
 
 + **`Femto`**
 
@@ -24,9 +27,9 @@
 
 **System Configuration**
 
-+ `distro` :           funtoo
-+ `wm`:                2bwm
-+ `terminal` :         xst
++ `distro` :           openbox
++ `wm`:                openbox
++ `terminal` :         st forked luke
 + `shell`:             zsh
 + `launcher` :         rofi
 + `bar`:               polybar
@@ -35,7 +38,7 @@
 + `file manager`:      ranger
 + `editor`:            neovim
 + `screen` :           tmux
-+  `browser`:          firefox
++  `browser`:          firefox/chrome
 + `download manager`:  aria2c
 
 Customing Linux have fun, try it!
