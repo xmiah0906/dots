@@ -27,7 +27,7 @@
 
 **System Configuration**
 
-+ `distro` :           openbox
++ `distro` :           voidlinux
 + `wm`:                openbox
 + `terminal` :         st forked luke
 + `shell`:             zsh
