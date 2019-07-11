@@ -5,7 +5,7 @@
 ***SCREENSHOTS***
 + **`Action`**
 
-![Gif-Wallpaper](https://s3.gifyu.com/images/out0e95a07cfa7101d0.gif "openbox")
+![](out.gif)
 
 + **`Desu-chan`**
 
