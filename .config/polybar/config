@@ -1,0 +1,290 @@
+[color]
+black  = ${xrdb:color0}
+red    = ${xrdb:color8}
+yellow = ${xrdb:color11}
+green  = ${xrdb:color9}
+white  = ${xrdb:color15}
+
+[bar/top]
+width  = 100%
+height = 26
+
+;center
+offset-x = 0
+offset-y = 0
+
+radius            = 0
+monitor           = eDP1
+overrite-redirect = true
+
+font-0 = "SF Pro Display:Semibold:pixelsize=9;2"
+font-1 = Typicons:size=10;2
+font-2 = Siji:pixelsize=11;2
+font-3 = "icomoon\-feather:size=10;2"
+font-4 = "Iosevka Nerd Font:size=16;3"
+font-5 = Material:size=12;2
+
+background = ${color.black}
+foreground = ${color.red}
+
+border-size  = 0
+border-color = ${color.black}
+
+modules-left  = panel
+modules-right = wlan right1 cpu right2 temperature right1 fan right2 volume right1 battery right2 date
+
+;modules-right = right1 ibus_lang right2 wlan right1 cpu right2 temperature right1 fan right2 volume right1 battery right2 date
+
+fixed-center  = true
+tray-position = none
+;bottom        = true
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/panel]
+type = custom/text
+
+;content = "%{T3}%{T-}"
+content = 
+content-foreground = ${color.yellow}
+content-padding = 3
+click-left = ~/.config/polybar/scripts/rofi-menu
+
+[module/right2]
+type = custom/text
+content-background = ${color.red}
+content-foreground = ${color.black}
+content = "%{T5}%{T-}"
+
+[module/right1]
+type = custom/text
+content-background = ${color.black}
+content-foreground = ${color.red}
+content = "%{T5}%{T-}"
+
+[module/left1]
+type = custom/text
+content-background = ${color.red}
+content-foreground = ${color.black}
+content = "%{T5}%{T-}"
+
+[module/left2]
+type = custom/text
+content-background = ${color.black}
+content-foreground = ${color.red}
+content = "%{T5}%{T-}"
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal><label-connected>
+label-connected =  " %downspeed:6%  "
+label-connected-foreground = ${color.white}
+format-connected-padding = 3
+
+format-disconnected =
+
+ramp-signal-0 = "  "
+ramp-signal-1 = "  "
+ramp-signal-2 = "  "
+ramp-signal-3 = "  "
+ramp-signal-4 = "  "
+
+ramp-signal-foreground = ${color.yellow}
+
+
+; Battery
+[module/battery]
+type    = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 95
+poll-interval = 5
+time-format = %H:%M
+
+format-padding = 3
+
+format-charging            = <animation-charging> <label-charging>
+format-charging-foreground = ${color.white}
+format-charging-background = ${color.red}
+;format-charging-padding    = 3
+
+format-discharging            = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${color.white}
+format-discharging-background = ${color.red}
+;format-discharging-padding    = 3
+
+format-full            = <label-full>
+format-full-foreground = ${color.white}
+format-full-background = ${color.red}
+format-full-padding    = 3
+
+label-charging    = "%percentage%%    "
+;label-charging    = "  %percentage%% "
+label-discharging = "%percentage%%    "
+label-full        = Full Capacity
+
+label-charging-foreground = ${color.white}
+label-charging-background = ${color.red}
+
+label-discharging-foreground = ${color.white}
+label-discharging-background = ${color.red}
+
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+animation-charging-5 = "  "
+
+animation-charging-framerate = 750
+animation-charging-foreground = ${color.green}
+
+;ramp-capacity-0 = 
+;ramp-capacity-1 = 
+;ramp-capacity-2 = 
+;ramp-capacity-3 = 
+
+ramp-capacity-foreground = ${color.green}
+
+; Date
+[module/date]
+type = internal/date
+interval = 1.0
+
+
+time-alt = %a, %d %b
+time     = %I:%M %p
+label    = %time%
+
+format                   = "<label>"
+format-prefix            = %{T4} %{T-}
+format-prefix-foreground = ${color.yellow}
+
+format-foreground = ${color.white}
+format-background = ${color.black}
+format-padding    = 3
+
+; Volume
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = "<ramp-volume><label-volume>"
+label-volume = "%percentage%%  "
+label-volume-foreground = ${color.white}
+label-volume-padding = 1
+
+
+ramp-volume-0 = " %{T4}%{T-} "
+ramp-volume-1 = " %{T4}%{T-} "
+ramp-volume-2 = " %{T4}%{T-} "
+ramp-volume-3 = " %{T4}%{T-} "
+ramp-volume-4 = " %{T4}%{T-} "
+ramp-headphones-0 = " %{T3}%{T-}"
+ramp-headphones-1 = " %{T3}%{T-}"
+
+ramp-volume-foreground = ${color.yellow}
+
+format-muted = <label-muted>
+;label-muted =  muted
+label-muted = "%{T3}%{T-} muted"
+label-muted-foreground = ${color.yellow}
+label-muted-background = ${color.black}
+label-muted-padding = 2
+
+format-volume-padding = 2
+format-muted-padding = 2
+
+[module/cpu]
+type     = internal/cpu
+interval = 0.5
+
+format-foreground = ${color.green}
+format-background = ${color.red}
+
+label         = " %percentage%%   "
+format-prefix = " "
+
+label-foreground = ${color.white}
+label-background = ${color.red}
+
+;format-padding = 3
+
+;fan
+[module/fan]
+type = custom/script
+interval = 3.5
+
+format = " <label>  "
+
+exec = "sensors | grep fan1 | awk '{print $2,$3}'"
+exec-if = sensors
+
+format-background = ${color.red}
+format-foreground = ${color.white}
+
+;format-prefix = "  "
+format-prefix = "  "
+format-prefix-background = ${color.red}
+format-prefix-foreground = ${color.green}
+
+format-padding = 3
+
+[module/temperature]
+type             = internal/temperature
+
+interval = 0.5
+thermal-zone = 0
+
+warn-temperature = 62
+units = true
+
+format      = "<ramp> <label>"
+format-warn = " <ramp> <label-warn>"
+format-padding = 2
+
+label                 = "%temperature-c%  "
+label-foreground      = ${color.white}
+label-warn            = "%temperature-c%  "
+label-warn-foreground = ${color.yellow}
+format-warn-padding = 1
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+ramp-foreground = ${color.yellow}
+
+[module/ibus_lang]
+type = custom/script
+format = " <label>  "
+exec = ibus engine | awk '/Bamboo/ { print "VIE" } /eng/ { print "US" }'
+
+format-background = ${color.red}
+format-foreground = ${color.black}
+format-padding = 3
+
+interval = 0.5
+
+format-prefix = "%{T4}%{T-}"
+format-prefix-background = ${color.red}
+format-prefix-foreground = ${color.black}
+format-prefix-padding = 2
+
+click-left = ~/.config/polybar/scripts/change-ibus-engine.sh
+
+[global/wm]
+margin-top    = 0
+margin-bottom = 5
+
+; vim:ft=dosini
