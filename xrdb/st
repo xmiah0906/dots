@@ -1,15 +1,17 @@
 ! These options only take effect on startup.
 st.termname: st-256color
-! The following options options can be reloaded via USR1 signal.
 
-st.font:        Monaco:pixelsize=9:antialias=true:autohint=true \
+! The following options options can be reloaded via USR1 signal.
+st.font:        Roboto Mono:pixelsize=10:bold:antialias=true:autohint=true \
                 Roboto Mono for Powerline:pixelsize=9:antialias=true:autohint=true \
                 DejavuSanMono Nerd Font Mono:pixelsize=9:antialias=true:autohint=true \
                 SourceCodePro+Powerline+Awesome Regular:pixelsize=9:antialias=true:autohint=true;
 
-st.borderpx:     28
+st.borderpx:     25
+
 ! Available cursor values: 2 4 6 7 = █ _ | ☃ ( 1 3 5 are blinking versions)
 st.cursorshape:  4
+
 st.cursorthickness:  2
 st.cursorblinkstyle: 0
 st.cursorblinkontype: 1
@@ -21,8 +23,10 @@ st.cwscale:      1.0
 st.blinktimeout: 800
 st.bellvolume:  100
 st.prompt_char:   $
+st.imstyle:     root
 
 ! opacity==255 means what terminal will be not transparent, 0 - fully transparent
 st.opacity: 255
+st.alpha: 0.98
 
-! vim: set ft=xdefaults:
+! vim:ft=xdefaults:
