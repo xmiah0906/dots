@@ -1,13 +1,19 @@
 [color]
-black  = ${xrdb:color0}
-red    = ${xrdb:color8}
-yellow = ${xrdb:color11}
-green  = ${xrdb:color9}
-white  = ${xrdb:color15}
+
+;[dark theme]
+black = ${xrdb:color15}
+red   = ${xrdb:color1}
+grn   = ${xrdb:color2}
+ylw   = ${xrdb:color3}
+blu   = ${xrdb:color4}
+mag   = ${xrdb:color5}
+cyn   = ${xrdb:color6}
+bred  = ${xrdb:color8}
+wht   = ${xrdb:color0}
 
 [bar/top]
 width  = 100%
-height = 26
+height = 35
 
 ;center
 offset-x = 0
@@ -17,23 +23,35 @@ radius            = 0
 monitor           = eDP1
 overrite-redirect = true
 
-font-0 = "SF Pro Display:Semibold:pixelsize=9;2"
-font-1 = Typicons:size=10;2
-font-2 = Siji:pixelsize=11;2
-font-3 = "icomoon\-feather:size=10;2"
-font-4 = "Iosevka Nerd Font:size=16;3"
-font-5 = Material:size=12;2
+font-0 = "SF Pro Display:semibold:pixelsize=8;2"
+font-1 = Typicons:size=8;2
+font-2 = Siji:pixelsize=8;2
+font-3 = "icomoon\-feather:size=8;2"
+font-4 = Material:size=10;2
+
+;font-4 = "Iosevka Nerd Font:size=16;3"
+
+font-5  = "Font Awesome 5 Free:size=8;0"
+font-6  = "Font Awesome 5 Free Solid:size=8;0"
+font-7  = "Font Awesome 5 Brands:size=8;0"
+font-8  = "Noto Sans Symbols2:size=8;2"
+font-9  = "Noto Sans Symbols:size=8;2"
+font-10 = "Font Awesome 5 Free Solid:style=bold:size=7;2"
+font-11 = "Font Awesome 5 Free Solid:style=bold:size=8;2"
+font-12 = "Material:style=bold:size=10;3"
 
 background = ${color.black}
-foreground = ${color.red}
+foreground = ${color.black}
 
 border-size  = 0
 border-color = ${color.black}
 
-modules-left  = panel
-modules-right = wlan right1 cpu right2 temperature right1 fan right2 volume right1 battery right2 date
+;modules-left  =  panel xwindow
+;modules-right = wlan right1 cpu right2 temperature right1 fan right2 volume right1 battery right2 date
 
-;modules-right = right1 ibus_lang right2 wlan right1 cpu right2 temperature right1 fan right2 volume right1 battery right2 date
+modules-left   = date left1 battery left2 volume left1 fan right2 temperature right1 cpu right2 wlan
+modules-center = workspaces
+modules-right  = xwindow panel
 
 fixed-center  = true
 tray-position = none
@@ -44,45 +62,106 @@ tray-position = none
 [module/panel]
 type = custom/text
 
-;content = "%{T3}%{T-}"
-content = 
-content-foreground = ${color.yellow}
-content-padding = 3
-click-left = ~/.config/polybar/scripts/rofi-menu
+content            = 
+click-left         = ~/.config/polybar/scripts/rofi-menu
+content-foreground = ${color.ylw}
+content-padding    = 3
 
 [module/right2]
 type = custom/text
-content-background = ${color.red}
+content-background = ${color.black}
 content-foreground = ${color.black}
 content = "%{T5}%{T-}"
 
 [module/right1]
 type = custom/text
 content-background = ${color.black}
-content-foreground = ${color.red}
+content-foreground = ${color.black}
 content = "%{T5}%{T-}"
 
 [module/left1]
 type = custom/text
-content-background = ${color.red}
+content-background = ${color.black}
 content-foreground = ${color.black}
 content = "%{T5}%{T-}"
 
 [module/left2]
 type = custom/text
 content-background = ${color.black}
-content-foreground = ${color.red}
+content-foreground = ${color.black}
 content = "%{T5}%{T-}"
+
+[module/xwindow]
+type = internal/xwindow
+
+;format-prefix = " %{T11}%{T-}"
+;format-prefix = "  "
+
+;format-prefix-foreground = ${color.mag}
+;format-prefix-background = ${color.black}
+
+label      = "  %title:0:75:..%  "
+label-font = 1
+
+label-foreground = ${color.wht}
+label-background = ${color.black}
+
+labal-maxlen  = 45
+format-pading = 2
+
+[module/workspaces]
+type           = internal/xworkspaces
+pin-workspaces = true
+enable-click   = true
+enable-scroll  = false
+
+;extra icons to choose from
+;http://fontawesome.io/cheatsheet/
+;       v     
+
+icon-0 = 1; 
+icon-1 = 2; 
+icon-2 = 3; 
+icon-3 = 4; 
+icon-4 = 5; 
+
+format        = <label-state>
+label-monitor = %name%
+;icon-default = -
+
+;label-active = ×
+;label-occupied = *
+;label-urgent = *
+;label-empty = -
+
+label-active   = %icon%
+label-occupied = %icon%
+label-urgent   = %icon%
+label-empty    = %icon%
+
+label-active-background = ${color.black}
+label-active-foreground = ${color.ylw}
+label-active-padding = 2
+
+label-occupied-foreground = ${color.black}
+label-occupied-background = ${color.mag}
+
+label-urgent-foreground = ${color.wht}
+label-urgent-background = ${color.black}
+label-urgent-padding = 2
+
+label-empty-foreground = ${color.bred}
+label-empty-padding = 2
 
 [module/wlan]
 type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal><label-connected>
-label-connected =  " %downspeed:6%  "
-label-connected-foreground = ${color.white}
-format-connected-padding = 3
+format-connected           = <ramp-signal><label-connected>
+label-connected            =  " %downspeed:6%  "
+label-connected-foreground = ${color.wht}
+format-connected-padding   = 1
 
 format-disconnected =
 
@@ -90,9 +169,9 @@ ramp-signal-0 = "  "
 ramp-signal-1 = "  "
 ramp-signal-2 = "  "
 ramp-signal-3 = "  "
-ramp-signal-4 = "  "
+ramp-signal-4 = "%{T12}%{T-}  "
 
-ramp-signal-foreground = ${color.yellow}
+ramp-signal-foreground = ${color.mag}
 
 
 ; Battery
@@ -104,33 +183,33 @@ full-at = 95
 poll-interval = 5
 time-format = %H:%M
 
-format-padding = 3
+format-padding = 1
 
 format-charging            = <animation-charging> <label-charging>
-format-charging-foreground = ${color.white}
-format-charging-background = ${color.red}
+format-charging-foreground = ${color.wht}
+format-charging-background = ${color.black}
 ;format-charging-padding    = 3
 
 format-discharging            = <ramp-capacity> <label-discharging>
-format-discharging-foreground = ${color.white}
-format-discharging-background = ${color.red}
+format-discharging-foreground = ${color.wht}
+format-discharging-background = ${color.black}
 ;format-discharging-padding    = 3
 
 format-full            = <label-full>
-format-full-foreground = ${color.white}
-format-full-background = ${color.red}
-format-full-padding    = 3
+format-full-foreground = ${color.wht}
+format-full-background = ${color.black}
+;format-full-padding    = 3
 
-label-charging    = "%percentage%%    "
+label-charging    = "%percentage%% "
 ;label-charging    = "  %percentage%% "
-label-discharging = "%percentage%%    "
+label-discharging = "%percentage%% "
 label-full        = Full Capacity
 
-label-charging-foreground = ${color.white}
-label-charging-background = ${color.red}
+label-charging-foreground = ${color.wht}
+label-charging-background = ${color.black}
 
-label-discharging-foreground = ${color.white}
-label-discharging-background = ${color.red}
+label-discharging-foreground = ${color.wht}
+label-discharging-background = ${color.black}
 
 ramp-capacity-0 = "  "
 ramp-capacity-1 = "  "
@@ -146,14 +225,14 @@ animation-charging-4 = "  "
 animation-charging-5 = "  "
 
 animation-charging-framerate = 750
-animation-charging-foreground = ${color.green}
+animation-charging-foreground = ${color.red}
 
 ;ramp-capacity-0 = 
 ;ramp-capacity-1 = 
 ;ramp-capacity-2 = 
 ;ramp-capacity-3 = 
 
-ramp-capacity-foreground = ${color.green}
+ramp-capacity-foreground = ${color.red}
 
 ; Date
 [module/date]
@@ -166,20 +245,20 @@ time     = %I:%M %p
 label    = %time%
 
 format                   = "<label>"
-format-prefix            = %{T4} %{T-}
-format-prefix-foreground = ${color.yellow}
+format-prefix            = "  %{T4} %{T-}"
+format-prefix-foreground = ${color.ylw}
 
-format-foreground = ${color.white}
+format-foreground = ${color.wht}
 format-background = ${color.black}
-format-padding    = 3
+format-padding    = 1
 
 ; Volume
 [module/volume]
 type = internal/pulseaudio
 
 format-volume = "<ramp-volume><label-volume>"
-label-volume = "%percentage%%  "
-label-volume-foreground = ${color.white}
+label-volume = "%percentage%%"
+label-volume-foreground = ${color.wht}
 label-volume-padding = 1
 
 
@@ -191,30 +270,29 @@ ramp-volume-4 = " %{T4}%{T-} "
 ramp-headphones-0 = " %{T3}%{T-}"
 ramp-headphones-1 = " %{T3}%{T-}"
 
-ramp-volume-foreground = ${color.yellow}
+ramp-volume-foreground = ${color.blu}
 
 format-muted = <label-muted>
-;label-muted =  muted
 label-muted = "%{T3}%{T-} muted"
-label-muted-foreground = ${color.yellow}
+label-muted-foreground = ${color.ylw}
 label-muted-background = ${color.black}
-label-muted-padding = 2
+label-muted-padding = 1
 
-format-volume-padding = 2
-format-muted-padding = 2
+format-volume-padding = 0
+format-muted-padding = 1
 
 [module/cpu]
 type     = internal/cpu
 interval = 0.5
 
-format-foreground = ${color.green}
-format-background = ${color.red}
+format-foreground = ${color.grn}
+format-background = ${color.black}
 
 label         = " %percentage%%   "
-format-prefix = " "
+format-prefix = "%{T13}%{T-} "
 
-label-foreground = ${color.white}
-label-background = ${color.red}
+label-foreground = ${color.wht}
+label-background = ${color.black}
 
 ;format-padding = 3
 
@@ -228,15 +306,17 @@ format = " <label>  "
 exec = "sensors | grep fan1 | awk '{print $2,$3}'"
 exec-if = sensors
 
-format-background = ${color.red}
-format-foreground = ${color.white}
+format-background = ${color.black}
+format-foreground = ${color.wht}
 
 ;format-prefix = "  "
-format-prefix = "  "
-format-prefix-background = ${color.red}
-format-prefix-foreground = ${color.green}
+;format-prefix = " %{T10}%{T-} "
+format-prefix            = "  %{T11} %{T-}"
 
-format-padding = 3
+format-prefix-foreground = ${color.mag}
+format-prefix-background = ${color.black}
+
+format-padding = 1
 
 [module/temperature]
 type             = internal/temperature
@@ -249,12 +329,12 @@ units = true
 
 format      = "<ramp> <label>"
 format-warn = " <ramp> <label-warn>"
-format-padding = 2
+format-padding = 1
 
-label                 = "%temperature-c%  "
-label-foreground      = ${color.white}
-label-warn            = "%temperature-c%  "
-label-warn-foreground = ${color.yellow}
+label                 = "%temperature-c%"
+label-foreground      = ${color.wht}
+label-warn            = "%temperature-c%"
+label-warn-foreground = ${color.ylw}
 format-warn-padding = 1
 
 ramp-0 = 
@@ -263,7 +343,7 @@ ramp-2 = 
 ramp-3 = 
 ramp-4 = 
 
-ramp-foreground = ${color.yellow}
+ramp-foreground = ${color.cyn}
 
 [module/ibus_lang]
 type = custom/script
@@ -285,6 +365,6 @@ click-left = ~/.config/polybar/scripts/change-ibus-engine.sh
 
 [global/wm]
 margin-top    = 0
-margin-bottom = 5
+margin-bottom = 10
 
 ; vim:ft=dosini
