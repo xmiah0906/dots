@@ -21,14 +21,14 @@ o=
 osname=$(cat /etc/*-release | grep -i name | cut -d'=' -d'"' -f2 | sed -n 1p)
 
 w=
-wifiname="$(sudo iwgetid | cut -d \" -f2)"
+wifiname="$(iwgetid | cut -d \" -f2)"
 
 h=
-#wmname="$(xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")"
-wmname="$(ps -e | grep -m 1 -o -F \
-    -e "2bwm" \
-    -e "dwm" \
-    -e "awesome")"
+wmname="$(xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")"
+#wmname="$(ps -e | grep -m 1 -o -F \
+#    -e "2bwm" \
+#    -e "dwm" \
+#    -e "awesome")"
 
 k=
 kernel="$(uname -r)"

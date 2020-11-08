@@ -1,0 +1,3 @@
+#!/bin/bash
+ffmpeg -y -i $(cat ~/.cache/wal/wal) -filter_complex "boxblur=20" -vframes 1 blur.jpg -loglevel quiet ; \
+nitrogen --set-zoom-fill blur.jpg

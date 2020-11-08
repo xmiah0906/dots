@@ -16,7 +16,7 @@ if [ "$DPMS" == "" ]; then
     notify-send -u low -a "Caffeine" -i "caffeine" "Caffeine Mode Enabled"
 else
     # dpms disabled, turn it on
-    xset s 0 300
+    xset s 180 180
     xset s blank
     xset +dpms
     echo "Caffeine mode disabled"

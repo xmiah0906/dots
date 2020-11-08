@@ -21,13 +21,14 @@ o=
 osname=$(cat /etc/*-release | grep -i name | cut -d'=' -d'"' -f2 | sed -n 1p)
 
 w=
-wifiname="$(sudo iwgetid | cut -d \" -f2)"
+wifiname="$(iwgetid | cut -d \" -f2)"
 
 h=
 wmname="$(ps -e | grep -m 1 -o -F \
     -e "2bwm" \
     -e "dwm" \
-    -e "awesome")"
+    -e "awesome" \
+    -e "openbox")"
 
 k=
 kernel="$(uname -r)"
@@ -40,13 +41,13 @@ shell="$(basename $SHELL)"
 version="$($SHELL --version | awk '{print $2}')"
 
 f=
-term="xst-256color"
+term="st"
 #check="$(ps -o 'ppid=' -p $$)"
 #term="$(ps -o 'cmd=' -p $check | awk '{print $1}')"
 
 e=
-packages=$(eix-installed -a | wc -l)
-emerge="(emerge)"
+packages=$(xbps-query -l | wc -l)
+emerge="(xbps-query)"
 
 # (\ /)
 # ( . .)

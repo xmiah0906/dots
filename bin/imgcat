@@ -1,0 +1,8 @@
+#!/bin/bash
+source "`ueberzug library`"
+{
+    ImageLayer::add [identifier]="img0" [x]="0" [y]="0" [path]="$1"
+    read
+    ImageLayer::remove [identifier]="img0"
+    read
+} | ImageLayer

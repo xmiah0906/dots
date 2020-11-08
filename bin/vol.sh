@@ -4,18 +4,17 @@
 . "${HOME}/.cache/wal/colors.sh"
 
 IF="Master"      # audio channel: Master|PCM
-SECS="1"         # sleep $SECS
+SECS="3"         # sleep $SECS
 BG="$color0"     # background colour of window
-FG="#fff"       # foreground colour of text/icon
-BAR_FG="$color2" # foreground colour of volume bar
+FG="#fff"        # foreground colour of text/icon
+BAR_FG="$color1" # foreground colour of volume bar
 BAR_BG="$color0" # background colour of volume bar
-# XPOS="1345"    # horizontal positioning
-XPOS="250"
-YPOS="30"        # vertical positioning
-HEIGHT="30"      # window height
-WIDTH="225"      # window width
-BAR_WIDTH="200"  # width of volume bar
-BAR_HEIGHT="1"   # height of volume bar
+XPOS="1705"      # horizontal positioning
+YPOS="40"        # vertical positioning
+HEIGHT="35"      # window height
+WIDTH="205"      # window width
+BAR_WIDTH="160"  # width of volume bar
+BAR_HEIGHT="3"   # height of volume bar
 
 # don't touch
 PIPE="/tmp/volpipe"
@@ -60,7 +59,7 @@ case "$1" in
 esac
 
 #Actual volume changing (readability low)
-AMIXOUT="$(amixer -D pulse sset "$IF" "$AMIXARG" | tail -n 1)"
+AMIXOUT="$(amixer set "$IF" "$AMIXARG" | tail -n 1)"
 MUTE="$(cut -d '[' -f 4 <<<"$AMIXOUT")"
 VOL="$(cut -d '[' -f 2 <<<"$AMIXOUT" | sed 's/%.*//g')"
 
