@@ -1,0 +1,18 @@
+! ╻ ╻┏━┓┏━╸┏━┓┏━┓╻ ╻┏━┓┏━╸┏━╸┏━┓
+! ┏╋┛┣┳┛┣╸ ┗━┓┃ ┃┃ ┃┣┳┛┃  ┣╸ ┗━┓
+! ╹ ╹╹┗╸┗━╸┗━┛┗━┛┗━┛╹┗╸┗━╸┗━╸┗━┛
+! by LFS
+! managed like they are supposed to be
+
+!#include ".xrdb/kitty"
+#include ".xrdb/colors/light/xmiah-light"
+! #include ".xrdb/colors/ocean"
+! #include ".xrdb/xresources"
+
+#include ".xrdb/sxiv"
+#include ".xrdb/xft"
+#include ".xrdb/twobwm"
+#include ".xrdb/rofi"
+#include ".xrdb/st"
+#include ".xrdb/rxvt"
+
