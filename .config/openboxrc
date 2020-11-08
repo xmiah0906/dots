@@ -1,10 +1,9 @@
-# config 2bwm hotkeys with sxhkd
-
 super + d
-	rofi -show drun -modi drun -display-run 'Run' -display-drun "Openbox " -hide-scrollbar
+#	rofi -show drun -modi drun -display-run 'Run' -display-drun "Openbox " -hide-scrollbar
+    $XDG_CONFIG_HOME/polybar/scripts/rofi-menu
 
 super + w
-	firefox
+	google-chrome-stable
 
 super + v
 	pavucontrol
@@ -27,32 +26,39 @@ XF86AudioMicMute
 super + F2
 	~/bin/toggle-touchpad.sh
 
+# Capslock Led Notifications
+@Caps_Lock
+    ~/bin/caplocks.sh
+
 # Screensaves
 super + F3
 	~/bin/caffeine.sh
 
-XF86Display
-    sudo zzz
+#XF86Display
+#    sudo zzz
 #    sudo pm-suspend
 
 super + @F7
 	xset dpms force off
+
+XF86Display
+    mantablockscreen
 
 # Screenshots
 
 super + @Print
 	~/bin/scr
 
-# Random Wallpapers
+# Randomw Wallpapers
 # Dark Themes
 super + F1
-	wal -i "$HOME/Imagens/Wallpapers" ;  \
-    ~/.config/2bwm/panel/underpl-s
+	wal -i "$XDG_CONFIG_HOME/wpg/wallpapers" ;  \
+    $XDG_CONFIG_HOME/openbox/wal-set
 
 # Light Themes
 super + shift + F1
-	wal -i "$HOME/Imagens/Wallpapers" -l ; \
-    ~/.config/2bwm/panel/underpl-s
+	wal -i "$XDG_CONFIG_HOME/wpg/wallpapers" -l ; \
+    $XDG_CONFIG_HOME/openbox/wal-set
 
 # Reload SXHKD config
 super + Escape

@@ -19,15 +19,15 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Vent</name>
-    <titleLayout>IMCSDL</titleLayout>
-    <cornerRadius>0</cornerRadius>
+    <name>Py</name>
+    <titleLayout>CIMSL</titleLayout>
+    <cornerRadius menu="no">0</cornerRadius>
     <keepBorder>yes</keepBorder>
-    <animateIconify>no</animateIconify>
+    <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <size>9</size>
-      <name>Sans</name>
-      <weight>Normal</weight>
+      <name>SF Pro Display</name>
+      <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
@@ -62,7 +62,7 @@
     </font>
   </theme>
   <desktops>
-    <number>6</number>
+    <number>5</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>1</name>
@@ -70,7 +70,6 @@
       <name>3</name>
       <name>4</name>
       <name>5</name>
-      <name>6</name>
     </names>
     <popupTime>0</popupTime>
   </desktops>
@@ -84,10 +83,10 @@
     </popupFixedPosition>
   </resize>
   <margins>
-    <top>5</top>
+    <top>10</top>
     <bottom>5</bottom>
-    <left>5</left>
-    <right>5</right>
+    <left>1</left>
+    <right>1</right>
   </margins>
   <keyboard>
     <keybind key="W-1">
@@ -113,11 +112,6 @@
     <keybind key="W-5">
       <action name="GoToDesktop">
         <to>5</to>
-      </action>
-    </keybind>
-    <keybind key="W-6">
-      <action name="GoToDesktop">
-        <to>6</to>
       </action>
     </keybind>
     <keybind key="W-S-1">
@@ -155,13 +149,6 @@
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-S-6">
-      <action name="SendToDesktop">
-        <to>6</to>
-        <wrap>no</wrap>
-        <follow>no</follow>
-      </action>
-    </keybind>
     <keybind key="W-o">
       <action name="ToggleOmnipresent"/>
     </keybind>
@@ -180,7 +167,7 @@
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
-    <keybind key="W-S-Escape">
+    <keybind key="W-C-Escape">
       <action name="Exit">
         <prompt>no</prompt>
       </action>
@@ -214,12 +201,13 @@
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>st -g "73x37"</command>
+        <command>st -g "97x22"</command>
       </action>
     </keybind>
     <keybind key="W-S-Return">
       <action name="Execute">
-        <command>urxvtc -geometry "75x21"</command>
+        <!-- <command>urxvtc -geometry "83x21"</command> -->
+        <command>kitty</command>
       </action>
     </keybind>
     <keybind key="W-g">
@@ -241,7 +229,7 @@
         <x>0</x>
         <y>0</y>
         <height>80%</height>
-        <width>45%</width>
+        <width>42%</width>
       </action>
     </keybind>
     <keybind key="W-Right">
@@ -249,7 +237,7 @@
       <action name="MoveResizeTo">
         <x>-0</x>
         <y>-0</y>
-        <height>105%</height>
+        <height>100%</height>
         <width>52%</width>
       </action>
     </keybind>
@@ -579,13 +567,13 @@
   </mouse>
   <applications>
     <application class="*">
-      <decor>yes</decor>
+      <decor>no</decor>
     </application>
     <application class="*">
       <focus>yes</focus>
     </application>
     <application class="mpv">
-      <decor>no</decor>
+      <decor>yes</decor>
     </application>
     <application title="sxiv*">
       <decor>yes</decor>
@@ -597,7 +585,7 @@
       <decor>no</decor>
     </application>
     <application name="st">
-      <decor>no</decor>
+      <decor>yes</decor>
     </application>
     <application class="*" type="normal">
       <position force="yes">
@@ -613,4 +601,15 @@
       </position>
     </application>
   </applications>
+  <dock>
+    <position>TopLeft</position>
+    <floatingX>0</floatingX>
+    <floatingY>0</floatingY>
+    <stacking>Above</stacking>
+    <direction>Vertical</direction>
+    <noStrut>no</noStrut>
+    <autoHide>no</autoHide>
+    <hideDelay>300</hideDelay>
+    <showDelay>300</showDelay>
+  </dock>
 </openbox_config>
